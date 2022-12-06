@@ -1,0 +1,15 @@
+.terms{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .check{
+        width: max-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #757575;
+    }
+}
