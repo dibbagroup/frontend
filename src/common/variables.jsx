@@ -1,0 +1,5 @@
+export const NOTIFICATION_MSG_TYPE = {
+    SUCCESS : "SUCCESS",
+    WARNING : "WARNING",
+    DANGER : "DANGER"
+}
