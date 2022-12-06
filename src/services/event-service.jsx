@@ -21,7 +21,7 @@ export default class EventService {
 
   async getById(id) {
     if (id === null) {
-      id = this.getIdFromPath();
+      id = this.getIdFromURL();
     }
 
     let res = await doAwaitGet(
@@ -61,12 +61,10 @@ export default class EventService {
     navigator.clipboard.writeText(window.location.href);
   }
 
-  getIdFromPath() {
+  getIdFromURL() {
     const url = window.location.href;
     const word = "tests/";
     const index = url.indexOf(word);
-    const eventID = url.slice(index + word.length, url.length).toString();
-
-    console.log(eventID);
+    return url.slice(index + word.length, url.length).toString();
   }
 }

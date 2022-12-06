@@ -68,21 +68,6 @@ export default class AuthService {
     };
 
     let res = await doPost(this.userPath, body, null);
-    console.log(res);
+    // TODO: Como continuar o fluxo?
   }
 }
-
-/*
-SIGN UP RESP
-{
-  "id": "d5b58ad5-f23f-4259-bb3a-4cc713d227c2",
-  "firstName": "teste",
-  "lastName": "001",
-  "username": "teste_001",
-  "phone": "0",
-  "emailAddress": "dev.teste_001@gmail.com",
-  "active": true,
-  "role": "CUSTOMER",
-  "docNumber": "012345"
-}
-*/
