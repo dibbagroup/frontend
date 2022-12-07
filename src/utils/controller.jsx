@@ -1,9 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import HomePage from "../app/pages/home/home-page";
 import SignInPage from "../app/pages/sign-in/sign-in-page";
 
-export const Controller = (props) => {
+export const Controller = () => {
   return (
     <BrowserRouter>
       <Routes>
