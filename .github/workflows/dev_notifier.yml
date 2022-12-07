@@ -12,16 +12,8 @@ jobs:
     - name: Notification Slack
       uses: rtCamp/action-slack-notify@v2
       env:
-<<<<<<< HEAD
         SLACK_CHANNEL: bot_dev
         SLACK_TITLE: "New PR"
         SLACK_USERNAME: CI
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
         SLACK_MESSAGE: "Starting deploy 🚀🚀🚀"
-=======
-        SLACK_CHANNEL: dev_bot
-        SLACK_TITLE: New PR to dev
-        SLACK_USERNAME: Bot CI - DEV
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-        # SLACK_MESSAGE: "New PR to dev."
->>>>>>> 1598bb9 (adding dev, main)
