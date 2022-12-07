@@ -14,7 +14,7 @@ jobs:
       - name: Notification Slack
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: frontend_staging
+          SLACK_CHANNEL: develop_tracker
           SLACK_TITLE: Tracker
           SLACK_USERNAME: CI
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
