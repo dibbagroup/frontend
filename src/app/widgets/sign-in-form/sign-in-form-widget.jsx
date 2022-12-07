@@ -13,7 +13,7 @@ export const SignInFormWidget = props => {
             <Form.Control className="form-input mb-3" type="email" placeholder="Email ou CNPJ da empresa" />
             <Form.Control className="form-input mb-3" type="password" placeholder="Senha" />
             <Form.Text className="recover-password mb-3">
-                <a href="#">Esqueceu a senha?</a>
+                <a href="/">Esqueceu a senha?</a>
             </Form.Text>
             <Button className="mb-2 login" type="submit">
                 Entrar
