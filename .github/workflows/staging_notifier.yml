@@ -1,19 +1,21 @@
-name: Notifier
+name: Notifier staging
 
 on:
   pull_request:
     branches: [ staging ]
 
-jobs:
+env:
+  SLACK_MSG : "New PR to Staging!"
 
+jobs:
   messageSlack:
     runs-on: ubuntu-latest
     steps:
     - name: Notification Slack
       uses: rtCamp/action-slack-notify@v2
       env:
-        SLACK_CHANNEL: bot_staging
-        SLACK_TITLE: "New PR"
+        SLACK_CHANNEL: frontend_staging
+        SLACK_TITLE: $env.SLACK_MSG
         SLACK_USERNAME: CI
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-        SLACK_MESSAGE: "Starting deploy 🚀🚀🚀"
+        SLACK_MESSAGE: $env.SLACK_MSG
