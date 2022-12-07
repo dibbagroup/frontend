@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+form{
+    width: 30%;
+    height: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 1%;
+    font-family: 'Poppins', sans-serif;
+
+    .greeting{
+        color: white;
+        display: block;
+        font: normal 400 1.7rem 'Poppins';
+    }
+
+    .motivate{
+        color: #afaeae;
+        display: block;
+        font-weight: 400;
+        font: normal 400 1rem 'Poppins';
+    }
+
+    input.form-input{
+        border-radius: 4px;
+        border: none;
+        background-color: #464646;
+        height: 8vh;
+    }
+
+    input.form-input:focus{
+        border: 1px ridge #8B409D;    
+    }
+    
+    .recover-password{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        a{
+            font: normal 400 0.9rem 'Poppins';
+            text-decoration: none;
+            color: #BDBDBD;
+       }
+    }
+
+    button.login{
+        background-color: #8B409D;
+        font-weight: 500;
+    }
+
+    button.login:hover{
+        background-color: #803792;
+    }
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div{
+            width: 40%;
+
+            hr{
+                color: white;
+                width: 100%;
+            }
+        }
+
+        .option{
+            color: white;
+            width: 20%;
+        }
+    }
+
+    button.with-google{
+        background-color: #EBEBEB;
+        color: #757575;
+        font-weight: 400;
+    }
+
+    button.with-google:hover{
+        background-color: #dbd6d6;
+        color: #757575;
+    }
+    
+    button.login, button.with-google{
+        width: 100%;
+        border: none;
+        border-radius: 2px;
+    }
+
+    .text-muted{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    form{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form{
+        width: 60%;
+    }
+}
