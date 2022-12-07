@@ -17,5 +17,5 @@ jobs:
           SLACK_CHANNEL: develop_tracker
           SLACK_TITLE: Tracker
           SLACK_USERNAME: CI
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL_TRACKER }}
           SLACK_MESSAGE: $env.SLACK_MSG
