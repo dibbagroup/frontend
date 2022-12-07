@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+form.sign-up-form{
+    width: 30%;
+    height: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 1%;
+    font-family: 'Poppins', sans-serif;
+
+    .greeting{
+        color: white;
+        display: block;
+        font: normal 400 1.7rem 'Poppins';
+    }
+
+    .motivate{
+        color: #afaeae;
+        display: block;
+        font-weight: 400;
+        font: normal 400 1rem 'Poppins';
+    }
+
+    input.form-input{
+        border-radius: 4px;
+        border: none;
+        background-color: #464646;
+        color: #757575;
+        height: 8vh;
+    }
+
+    input.form-input:focus{
+        border: 1px ridge #8B409D;    
+    }
+
+    .terms{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    
+        .check{
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: #757575;
+            padding-right: 6px;
+        }
+
+        .terms-text{
+            width: 90%;
+            display: flex;
+            justify-content: flex-start;
+            font-size: 0.8rem;
+            color: white;
+        }
+    }
+
+    button.newAcc{
+        width: 100%;
+        border: none;
+        border-radius: 2px;
+        background-color: #8B409D;
+        font-weight: 500;
+    }
+
+    button.newAcc:hover{
+        background-color: #803792;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    form.sign-up-form{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form.sign-up-form{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form.sign-up-form{
+        width: 60%;
+    }
+}
