@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import './sign-up-form-widget.scss'
+import logoDibba from "../../../assets/images/logo_login.png"
 
 export const SignUpFormWidget = props => {
 
@@ -8,10 +9,13 @@ export const SignUpFormWidget = props => {
 
     return (
         <Form className="sign-up-form">
+            <div className="logo mb-4">
+                <img src={logoDibba} alt="Logo Dibba" />
+            </div>
             <Form.Text className="greeting">
                 Seja bem-vindo!
             </Form.Text>
-            <Form.Text className="mb-5 motivate">
+            <Form.Text className="mb-3 motivate">
                 Faça seu cadastro para continuar
             </Form.Text>
             <Form.Control type="email" className="form-input mb-3" placeholder="Email" />
