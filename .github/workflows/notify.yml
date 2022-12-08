@@ -13,28 +13,27 @@ on:
       - test/*
       - chore/*
 
-# jobs:
-#   messageSlack:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Notification Slack
-#         uses: rtCamp/action-slack-notify@v2
-#         env:
-#           SLACK_CHANNEL: bot_dev
-#           SLACK_TITLE: "New PR"
-#           SLACK_USERNAME: CI
-#           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-#           SLACK_MESSAGE: "Starting deploy 🚀🚀🚀"
-
 jobs:
-  notify_slack:
+  messageSlack:
     runs-on: ubuntu-latest
     steps:
-      - name: Notification
-        uses: rtCamp/action-slack-notify
+      - name: Notification Slack
+        uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: develop_tracker
-          SLACK_TITLE: Heyy! We've new push 🚀🚀🚀
-          SLACK_USERNAME: (CI) Tracker
-          SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK_URL_TRACKER}}
-          SLACK_MESSAGE: Changes into ${{github.ref_name}}
+          SLACK_CHANNEL: bot_dev
+          SLACK_TITLE: "New PR"
+          SLACK_USERNAME: CI
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_MESSAGE: "Starting deploy 🚀🚀🚀"
+# jobs:
+#   notify_slack:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Notification
+#         uses: rtCamp/action-slack-notify
+#         env:
+#           SLACK_CHANNEL: develop_tracker
+#           SLACK_TITLE: Heyy! We've new push 🚀🚀🚀
+#           SLACK_USERNAME: (CI) Tracker
+#           SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK_URL_TRACKER}}
+#           SLACK_MESSAGE: Changes into ${{github.ref_name}}
