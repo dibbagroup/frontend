@@ -22,30 +22,17 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: develop_tracker
-          SLACK_TITLE: "New PR"
-          SLACK_USERNAME: CI
+          SLACK_TITLE: New changes
+          SLACK_USERNAME: (CI) Tracker
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_MESSAGE: "Starting deploy 🚀🚀🚀"
+          SLACK_MESSAGE: "We've changes inside ${{github.GITHUB_REF_NAME}} 🚀🚀🚀"
 
       - if: contains(fromJson('["pull_request"]'), github.event_name)
         name: Notification Slack
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: code_review
-          SLACK_TITLE: "New PR"
-          SLACK_USERNAME: CI
+          SLACK_TITLE: New Pull Request
+          SLACK_USERNAME: (CI) Code Review
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_MESSAGE: "Starting deploy 🚀🚀🚀"
-
-# jobs:
-#   notify_slack:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Notification
-#         uses: rtCamp/action-slack-notify
-#         env:
-#           SLACK_CHANNEL: develop_tracker
-#           SLACK_TITLE: Heyy! We've new push 🚀🚀🚀
-#           SLACK_USERNAME: (CI) Tracker
-#           SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK_URL_TRACKER}}
-#           SLACK_MESSAGE: Changes into ${{github.ref_name}}
+          SLACK_MESSAGE: "Code review open 💬💬💬"
