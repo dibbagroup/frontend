@@ -13,15 +13,11 @@ on:
       - test/*
       - chore/*
 
-env:
-  IS_PULL_REQUEST: contains(fromJson('["pull_request"]'), github.event_name)
-  IS_PUSH: contains(fromJson('["push"]'), github.event_name)
-
 jobs:
   messageSlack:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{env.IS_PUSH}}
+      - if: contains(fromJson('["push"]'), github.event_name)
         name: Notification Slack
         uses: rtCamp/action-slack-notify@v2
         env:
@@ -31,7 +27,7 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_MESSAGE: "We've changes, check it out 🚀🚀🚀"
 
-      - if: ${{env.IS_PULL_REQUEST}}
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
         name: Notification Slack
         uses: rtCamp/action-slack-notify@v2
         env:
