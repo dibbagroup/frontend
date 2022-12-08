@@ -1,0 +1,31 @@
+nav{
+    background-color: #40154B;
+}
+
+a.navbar-brand{
+    position: absolute;
+    width: fit-content;
+    height: 100%;
+
+    img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.navbar-toggler{
+    margin-left: auto !important;
+}
+
+.nav-link{
+    color: white;
+}
+
+.nav-link:hover{
+    color: rgb(194, 194, 194) !important;
+}
+
+.me-auto{
+    margin: auto;
+    color: white;
+}
