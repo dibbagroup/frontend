@@ -1,6 +1,13 @@
 .sign-in-page{
+    background-image: url("../../../assets/images/background_login.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     margin: auto;
     background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
