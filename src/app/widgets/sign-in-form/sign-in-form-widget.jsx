@@ -4,7 +4,7 @@ import logoDibba from '../../../assets/images/logo_login.png'
 
 export const SignInFormWidget = props => {
     return (
-        <Form>
+        <Form className="sign-in-form">
             <div className="logo mb-4">
                 <img src={logoDibba} alt="Logo Dibba" />
             </div>
