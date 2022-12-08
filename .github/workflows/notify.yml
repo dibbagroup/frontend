@@ -17,16 +17,10 @@ jobs:
   notify_slack:
     runs-on: ubuntu-latest
     steps:
-      # IS A PUSH
-      - if: contains(fromJson('["push"]'), github.event_name)
-        uses: rtCamp/action-slack-notify
+      - uses: rtCamp/action-slack-notify
         env:
           SLACK_CHANNEL: develop_tracker
           SLACK_TITLE: Heyy! We've new push 🚀🚀🚀
           SLACK_USERNAME: (CI) Tracker
           SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK_URL_TRACKER}}
           SLACK_MESSAGE: Changes into ${{github.ref_name}}
-
-      # IS A PULL REQUEST
-      - if: contains(fromJson('["pull_request"]'), github.event_name)
-        uses: rtCamp/action-slack-notify
