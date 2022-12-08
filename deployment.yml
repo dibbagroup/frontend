@@ -1,0 +1,54 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - "prod"
+      - "staging"
+      - "dev"
+
+jobs:
+  notify_slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send message to slack
+        uses: rtCamp/action-slack-notify
+        env:
+          SLACK_CHANNEL: code_review
+          SLACK_TITLE: Heyy! Deployment will start soon 🤖
+          SLACK_USERNAME: (CI) Deployment
+          SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK_URL_TRACKER}}
+          SLACK_MESSAGE: "Deploy to: ${{env.BRANCH_NAME}}"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to the repository
+        uses: actions/checkout@v2
+
+      - name: Set up NodeJS environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install package dependencies
+        run: npm install
+
+      - name: Pre-reploy frontend
+        run: npm run predeploy
+      
+      - name: Deploy!
+        run: npm run deploy
