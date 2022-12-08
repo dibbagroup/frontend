@@ -14,18 +14,21 @@ on:
 
 jobs:
   build:
-    if: contains(fromJson('["pull_request"]'), github.event_name)
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout to the repository
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Checkout to the repository
         uses: actions/checkout@v2
 
-      - name: Set up NodeJS environment
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Set up NodeJS environment
         uses: actions/setup-node@v2
         with:
           node-version: 18
 
-      - name: Cache node modules
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Cache node modules
         id: cache-npm
         uses: actions/cache@v3
         env:
@@ -38,12 +41,13 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install package dependencies
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Install package dependencies
         run: npm install
 
-      - name: Create test build
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Create test build
         run: npm run build
-
   notify_slack:
     runs-on: ubuntu-latest
     steps:
