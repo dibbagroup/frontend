@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - prod
+      - staging
+      - dev
+  push:
+    branches:
+      - feat/*
+      - fix/*
+      - chore/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Checkout to the repository
+        uses: actions/checkout@v2
+
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Set up NodeJS environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Install package dependencies
+        run: npm install
+
+      - if: contains(fromJson('["pull_request"]'), github.event_name)
+        name: Create test build
+        run: npm run build

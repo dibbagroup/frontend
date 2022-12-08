@@ -3,22 +3,22 @@ name: Deployment
 on:
   push:
     branches:
-      - "prod"
-      - "staging"
-      - "dev"
+      - prod
+      - staging
+      - dev
 
 jobs:
-  notify_slack:
+  messageSlack:
     runs-on: ubuntu-latest
     steps:
-      - name: Send message to slack
-        uses: rtCamp/action-slack-notify
+      - name: Notification Slack
+        uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: code_review
-          SLACK_TITLE: Heyy! Deployment will start soon 🤖
+          SLACK_CHANNEL: develop_tracker
+          SLACK_TITLE: "Deploy coming!"
           SLACK_USERNAME: (CI) Deployment
-          SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK_URL_TRACKER}}
-          SLACK_MESSAGE: "Deploy to: ${{env.BRANCH_NAME}}"
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_MESSAGE: "The deploy for ${{github.GITHUB_REF_NAME}} will start soon 🚀🚀🚀"
 
   deploy:
     runs-on: ubuntu-latest
@@ -49,6 +49,6 @@ jobs:
 
       - name: Pre-reploy frontend
         run: npm run predeploy
-      
+
       - name: Deploy!
         run: npm run deploy
