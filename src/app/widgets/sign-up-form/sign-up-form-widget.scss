@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
 form.sign-up-form{
     width: 40%;
     height: fit-content;
@@ -8,8 +6,9 @@ form.sign-up-form{
     padding-top: 1%;
     font-family: 'Poppins', sans-serif;
     background-color: #1E1E1E;
-    padding: 2em;
+    padding: 1.5em 2em;
     border-radius: 20px;
+    z-index: 1;
 
     div.logo{
         margin: auto;
@@ -49,6 +48,23 @@ form.sign-up-form{
 
     input.form-input:focus{
         border: 1px ridge #8B409D;    
+    }
+
+    div.eye-password{
+        position: absolute;
+        width: 34%;
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        i{
+            display: flex;
+            align-items: center;
+            color: white;
+            z-index: 1;
+            cursor: pointer;
+        }
     }
 
     .terms{

@@ -9,7 +9,7 @@ export const SignUpFormWidget = props => {
 
     return (
         <Form className="sign-up-form">
-            <div className="logo mb-4">
+            <div className="logo mb-3">
                 <img src={logoDibba} alt="Logo Dibba" />
             </div>
             <Form.Text className="greeting">
@@ -18,17 +18,22 @@ export const SignUpFormWidget = props => {
             <Form.Text className="mb-3 motivate">
                 Faça seu cadastro para continuar
             </Form.Text>
-            <Form.Control type="email" className="form-input mb-3" placeholder="Email" />
-            <Form.Control type="text" className="form-input mb-3" placeholder="CPF" />
-            <Form.Control type={inputDateType} className="form-input mb-3" placeholder="Data Inicial" onFocus={()=> {setInputDateType("date")}} />
-            <Form.Control type="password" className="form-input mb-3" placeholder="Senha" />
+            <Form.Control type="email" className="form-input mb-2" placeholder="Email" />
+            <Form.Control type="text" className="form-input mb-2" placeholder="CPF" />
+            <Form.Control type={inputDateType} className="form-input mb-2" placeholder="Data de Nascimento" onFocus={()=> {setInputDateType("date")}} />
+            <div className="eye-password"><i className="fi fi-rs-eye"></i></div>
+            <Form.Control type="password" className="form-input mb-2" id="password" placeholder="Senha" />
+            <div className="eye-password"><i className="fi fi-rs-eye"></i></div>
+            <Form.Control type="password" className="form-input mb-2" id="password" placeholder="Confirme sua Senha" />
             <Form.Group className="terms">
                 <Form.Check type="checkbox" className="check" />
                 <Form.Text className="terms-text">Concordo com os termos de privacidade</Form.Text>
             </Form.Group>
-            <Button className="mt-3 newAcc" type="submit">
+            <Button className="mt-2 newAcc" type="submit">
                 Criar Conta
             </Button>
         </Form>
     )
 }
+
+/* usestate true e false */
