@@ -9,8 +9,5 @@ jobs:
   checkout_dev:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@dev
-
       - name: Echo
         run: echo ${{github.ref}}
