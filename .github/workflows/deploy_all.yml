@@ -1,4 +1,4 @@
-name: Deploy
+name: deploy
 
 on:
   push:
@@ -6,8 +6,10 @@ on:
       - fix/*
 
 jobs:
-  checkout_dev:
+  deploy_staging:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo
-        run: echo ${{github.ref}}
+      - run: echo "Deploy to staging server"
+    environment:
+      name: staging
+      url: https://staging.example.com
