@@ -24,7 +24,7 @@ jobs:
           SLACK_MESSAGE: The deploy for ${{github.ref_name}} will start soon 🚀🚀🚀
 
   deploy_dev:
-    if: ${{github.ref_name == "dev"}}
+    if: ${{github.ref_name}} == "dev"
     runs-on: ubuntu-latest
     environment:
       name: dev
@@ -40,7 +40,7 @@ jobs:
           projectId: frontend-costumer
 
   deploy_staging:
-    if: ${{github.ref_name == "staging"}}
+    if: ${{github.ref_name}} == "staging"
     runs-on: ubuntu-latest
     environment:
       name: staging
@@ -56,7 +56,7 @@ jobs:
           projectId: frontend-costumer
 
   deploy_prod:
-    if: ${{github.ref_name == "prod"}}
+    if: ${{github.ref_name}} == "prod"
     runs-on: ubuntu-latest
     environment:
       name: prod
