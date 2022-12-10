@@ -5,18 +5,18 @@ import logoDibba from '../../../assets/images/logo_login.png'
 
 export const SignInFormWidget = props => {
 
-    const [passwordSee, setPasswordSee] = useState(false)
-    const [passwordSeeType, setPasswordSeeType] = useState("password")
+    const [showPassword, setShowPassword] = useState(false)
+    const [showPasswordType, setShowPasswordType] = useState("password")
 
-    function verSenha(){
-        if(passwordSee === false){
+    function handleShowPassword(){
+        if(showPassword === false){
             console.log("viu senha")
-            setPasswordSee(true)            
-            setPasswordSeeType("text")
+            setShowPassword(true)            
+            setShowPasswordType("text")
         } else{
             console.log("deixou de ver senha")
-            setPasswordSee(false)
-            setPasswordSeeType("password")
+            setShowPassword(false)
+            setShowPasswordType("password")
         }
     }
 
@@ -32,8 +32,8 @@ export const SignInFormWidget = props => {
                 Faça seu login para continuar.
             </Form.Text>
             <Form.Control className="form-input mb-3" type="email" placeholder="Email ou CNPJ da empresa" />
-            <div className="eye-password"><i className="fi fi-rs-eye" onClick={()=> {verSenha()}}></i></div>
-            <Form.Control type={passwordSeeType} className="form-input mb-3" placeholder="Senha" />
+            <div className="eye-password"><i className="fi fi-rs-eye" onClick={()=> {handleShowPassword()}}></i></div>
+            <Form.Control type={showPasswordType} className="form-input mb-3" placeholder="Senha" />
             <Form.Text className="recover-password mb-3">
                 <a href="/">Esqueceu a senha?</a>
             </Form.Text>
