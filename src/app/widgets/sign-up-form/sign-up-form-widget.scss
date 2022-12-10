@@ -1,20 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
 form.sign-up-form{
-    width: 30%;
-    height: 60%;
+    width: 40%;
+    height: fit-content;
     text-align: center;
     margin: 0 auto;
-    padding-top: 1%;
     font-family: 'Poppins', sans-serif;
+    background-color: #1E1E1E;
+    padding: 1.5em 2em;
+    border-radius: 20px;
+    z-index: 1;
 
-    .greeting{
+    div.logo{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        height: 30%;
+
+        img{
+            margin: auto;
+            height: 100%;
+            width: 75%;
+        }
+    }
+
+    .title{
         color: white;
         display: block;
         font: normal 400 1.7rem 'Poppins';
     }
 
-    .motivate{
+    .subtitle{
         color: #afaeae;
         display: block;
         font-weight: 400;
@@ -25,12 +41,35 @@ form.sign-up-form{
         border-radius: 4px;
         border: none;
         background-color: #464646;
-        color: #757575;
+        color: white;
         height: 8vh;
     }
 
     input.form-input:focus{
         border: 1px ridge #8B409D;    
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        filter: invert(0.8) brightness(100%) sepia(100%) saturate(10%) hue-rotate(20deg);
+    }
+
+    div.eye-password{
+        position: absolute;
+        width: 5%;
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-left: 29%;
+
+        i{
+            display: flex;
+            align-items: center;
+            color: white;
+            z-index: 1;
+            cursor: pointer;
+        }
     }
 
     .terms{
@@ -59,7 +98,7 @@ form.sign-up-form{
         }
     }
 
-    button.newAcc{
+    button[type="submit"]{
         width: 100%;
         border: none;
         border-radius: 2px;
@@ -67,7 +106,7 @@ form.sign-up-form{
         font-weight: 500;
     }
 
-    button.newAcc:hover{
+    button[type="submit"]:hover{
         background-color: #803792;
     }
 }
