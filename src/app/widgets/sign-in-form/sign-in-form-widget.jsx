@@ -1,8 +1,25 @@
+import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import './sign-in-form-widget.scss'
 import logoDibba from '../../../assets/images/logo_login.png'
 
 export const SignInFormWidget = props => {
+
+    const [passwordSee, setPasswordSee] = useState(false)
+    const [passwordSeeType, setPasswordSeeType] = useState("password")
+
+    function verSenha(){
+        if(passwordSee === false){
+            console.log("viu senha")
+            setPasswordSee(true)            
+            setPasswordSeeType("text")
+        } else{
+            console.log("deixou de ver senha")
+            setPasswordSee(false)
+            setPasswordSeeType("password")
+        }
+    }
+
     return (
         <Form className="sign-in-form">
             <div className="logo mb-4">
@@ -15,7 +32,8 @@ export const SignInFormWidget = props => {
                 Faça seu login para continuar.
             </Form.Text>
             <Form.Control className="form-input mb-3" type="email" placeholder="Email ou CNPJ da empresa" />
-            <Form.Control className="form-input mb-3" type="password" placeholder="Senha" />
+            <div className="eye-password"><i className="fi fi-rs-eye" onClick={()=> {verSenha()}}></i></div>
+            <Form.Control type={passwordSeeType} className="form-input mb-3" placeholder="Senha" />
             <Form.Text className="recover-password mb-3">
                 <a href="/">Esqueceu a senha?</a>
             </Form.Text>

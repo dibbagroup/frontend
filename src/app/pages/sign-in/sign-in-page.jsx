@@ -7,6 +7,7 @@ export default class SignInPage extends React.Component {
   render() {
     return (
       <div className="m-auto sign-in-page">
+        <div className="image-background"></div>
         <SignInFormWidget/>
       </div>
     )
