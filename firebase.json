@@ -2,7 +2,7 @@
   "hosting": [
     {
       "site": "frontend-costumer-dev",
-      "public": "build_dev",
+      "public": "build",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
@@ -19,7 +19,7 @@
     },
     {
       "site": "frontend-costumer-staging",
-      "public": "build_staging",
+      "public": "build",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
@@ -36,7 +36,7 @@
     },
     {
       "site": "frontend-costumer",
-      "public": "build_prod",
+      "public": "build",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
