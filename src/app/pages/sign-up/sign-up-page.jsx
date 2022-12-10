@@ -6,7 +6,9 @@ export default class SignUpPage extends React.Component {
 
   render() {
     return (
-      <div className="m-auto sign-up-page">
+      <div className="sign-up-page">
+
+        <div className="image-background"></div>
         <SignUpFormWidget />
       </div>
     )
