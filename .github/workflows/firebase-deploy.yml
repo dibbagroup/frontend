@@ -11,40 +11,8 @@ on:
       - prod
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout to the repository
-        uses: actions/checkout@v2
-
-      - name: Set up NodeJS environment
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18
-
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: Install package dependencies
-        run: npm install
-
-      - name: Create test build
-        run: npm run build
-
   notify_start:
     runs-on: ubuntu-latest
-    needs: [build]
     steps:
       - name: Notification Slack
         uses: rtCamp/action-slack-notify@v2
@@ -58,7 +26,6 @@ jobs:
   deploy_dev:
     if: ${{github.ref_name == "dev"}}
     runs-on: ubuntu-latest
-    needs: [build]
     environment:
       name: dev
       url: https://dev.dibba.com.br
@@ -75,7 +42,6 @@ jobs:
   deploy_staging:
     if: ${{github.ref_name == "staging"}}
     runs-on: ubuntu-latest
-    needs: [build]
     environment:
       name: staging
       url: https://staging.dibba.com.br
@@ -92,7 +58,6 @@ jobs:
   deploy_prod:
     if: ${{github.ref_name == "prod"}}
     runs-on: ubuntu-latest
-    needs: [build]
     environment:
       name: prod
       url: https://dibba.com.br
