@@ -57,8 +57,9 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FRONTEND_COSTUMER }}"
-          channelId: staging
           projectId: frontend-costumer
+          channelId : live
+          target: frontend-costumer-staging
 
   notify_end:
     runs-on: ubuntu-latest
