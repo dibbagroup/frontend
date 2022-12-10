@@ -1,11 +1,6 @@
 name: Build for Pull Request
 
-on:
-  pull_request:
-    branches:
-      - fix/*
-      - feat/*
-      - dev
+on: [pull_request]
 
 jobs:
   build:
