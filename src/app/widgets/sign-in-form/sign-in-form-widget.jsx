@@ -10,11 +10,9 @@ export const SignInFormWidget = props => {
 
     function handleShowPassword(){
         if(showPassword === false){
-            console.log("viu senha")
             setShowPassword(true)            
             setShowPasswordType("text")
         } else{
-            console.log("deixou de ver senha")
             setShowPassword(false)
             setShowPasswordType("password")
         }
