@@ -8,13 +8,13 @@ gen_service:
 	sh ./gen_service.sh
 
 dev:
-	yarn build_dev
+	npm build_dev
 	firebase deploy --only hosting:frontend-costumer-dev
 
 staging:
-	yarn build_staging
+	npm build_staging
 	firebase deploy --only hosting:frontend-costumer-staging
 
 prod:
-	yarn build_prod
+	npm build_prod
 	firebase deploy --only hosting:frontend-costumer
