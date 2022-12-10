@@ -25,10 +25,10 @@ export const SignInFormWidget = props => {
             <div className="logo mb-4">
                 <img src={logoDibba} alt="Logo Dibba" />
             </div>
-            <Form.Text className="greeting">
+            <Form.Text className="title">
                 Seja bem-vindo!
             </Form.Text>
-            <Form.Text className="mb-5 motivate">
+            <Form.Text className="mb-5 subtitle">
                 Faça seu login para continuar.
             </Form.Text>
             <Form.Control className="form-input mb-3" type="email" placeholder="Email ou CNPJ da empresa" />

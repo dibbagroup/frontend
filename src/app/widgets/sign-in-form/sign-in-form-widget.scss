@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
 form.sign-in-form{
     width: 40%;
     height: fit-content;
@@ -28,13 +26,13 @@ form.sign-in-form{
         }
     }
 
-    .greeting{
+    .title{
         color: white;
         display: block;
         font: normal 400 1.7rem 'Poppins';
     }
 
-    .motivate{
+    .subtitle{
         color: #afaeae;
         display: block;
         font-weight: 400;
