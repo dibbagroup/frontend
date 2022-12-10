@@ -1,27 +1,11 @@
-name: Deployment
+name: Build for Pull Request
 
-on:
-  push:
-    branches:
-      - prod
-      - staging
-      - dev
+on: [pull_request]
 
 jobs:
-  messageSlack:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Notification Slack
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_CHANNEL: develop_tracker
-          SLACK_TITLE: "Deploy coming!"
-          SLACK_USERNAME: (CI) Deployment
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_MESSAGE: "The deploy for ${{github.GITHUB_REF_NAME}} will start soon 🚀🚀🚀"
 
-  deploy:
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout to the repository
         uses: actions/checkout@v2
@@ -47,8 +31,5 @@ jobs:
       - name: Install package dependencies
         run: npm install
 
-      - name: Pre-reploy frontend
-        run: npm run predeploy
-
-      - name: Deploy!
-        run: npm run deploy
+      - name: Create test build
+        run: npm run build
