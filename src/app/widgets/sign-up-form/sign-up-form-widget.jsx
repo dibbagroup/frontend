@@ -12,7 +12,7 @@ export const SignUpFormWidget = props => {
     const [passwordSeeType, setPasswordSeeType] = useState("password")
     const [confirmPasswordSeeType, setConfirmPasswordSeeType] = useState("password")
 
-    function verSenha(){
+    function showPassword(){
         if(passwordSee === false){
             console.log("viu senha")
             setPasswordSee(true)            
@@ -24,7 +24,7 @@ export const SignUpFormWidget = props => {
         }
     }
 
-    function verConfirmarSenha(){
+    function showConfirmPassword(){
         if(confirmPasswordSee === false){
             setConfirmPasswordSee(true)            
             setConfirmPasswordSeeType("text")
@@ -48,9 +48,9 @@ export const SignUpFormWidget = props => {
             <Form.Control type="email" className="form-input mb-2" placeholder="Email" />
             <Form.Control type="text" className="form-input mb-2" placeholder="CPF" />
             <Form.Control type={inputDateType} className="form-input mb-2" placeholder="Data de Nascimento" onFocus={()=> {setInputDateType("date")}} />
-            <div className="eye-password"><i className="fi fi-rs-eye" onClick={()=> {verSenha()}}></i></div>
+            <div className="eye-password"><i className="fi fi-rs-eye" onClick={()=> {showPassword()}}></i></div>
             <Form.Control type={passwordSeeType} className="form-input mb-2" placeholder="Senha" />
-            <div className="eye-password"><i className="fi fi-rs-eye" onClick={()=> {verConfirmarSenha()}}></i></div>
+            <div className="eye-password"><i className="fi fi-rs-eye" onClick={()=> {showConfirmPassword()}}></i></div>
             <Form.Control type={confirmPasswordSeeType} className="form-input mb-2" placeholder="Confirme sua Senha" />
             <Form.Group className="terms">
                 <Form.Check type="checkbox" className="check" />
