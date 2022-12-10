@@ -1,19 +1,55 @@
 {
-  "hosting": {
-    "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
-    "headers": [
-      {"source": "/service-worker.js", "headers": [{"key": "Cache-Control", "value": "no-cache"}]}
-    ]
-  }
+  "hosting": [
+    {
+      "site": "frontend-costumer-dev",
+      "public": "build_dev",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/service-worker.js",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        }
+      ]
+    },
+    {
+      "site": "frontend-costumer-staging",
+      "public": "build_staging",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/service-worker.js",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        }
+      ]
+    },
+    {
+      "site": "frontend-costumer",
+      "public": "build_prod",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/service-worker.js",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        }
+      ]
+    }
+  ]
 }

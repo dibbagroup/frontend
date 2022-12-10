@@ -1,5 +1,21 @@
 {
   "projects": {
     "default": "frontend-costumer"
-  }
+  },
+  "targets": {
+    "frontend-costumer": {
+      "hosting": {
+        "dev": [
+          "frontend-costumer-dev"
+        ],
+        "staging": [
+          "frontend-costumer-staging"
+        ],
+        "prod": [
+          "frontend-costumer"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

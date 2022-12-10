@@ -22,9 +22,12 @@
   },
   "scripts": {
     "start": "env-cmd -f .env react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "react-scripts build",
+    "build_dev": "react-scripts build && mv build/ build_dev/",
+    "build_staging": "react-scripts build && mv build/ build_staging/",
+    "build_prod": "react-scripts build && mv build/ build_prod/"
   },
   "eslintConfig": {
     "extends": [
