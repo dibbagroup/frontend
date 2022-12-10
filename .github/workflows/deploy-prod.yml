@@ -53,13 +53,14 @@ jobs:
       - name: Install package dependencies
         run: npm install
 
-      - run: npm run build
+      - name: Build
+        run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FRONTEND_COSTUMER }}"
           projectId: frontend-costumer
-          channelId : live
+          channelId: live
           target: frontend-costumer
 
   notify_end:
