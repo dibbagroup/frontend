@@ -3,7 +3,6 @@ form.sign-up-form{
     height: fit-content;
     text-align: center;
     margin: 0 auto;
-    padding-top: 1%;
     font-family: 'Poppins', sans-serif;
     background-color: #1E1E1E;
     padding: 1.5em 2em;
@@ -25,13 +24,13 @@ form.sign-up-form{
         }
     }
 
-    .greeting{
+    .title{
         color: white;
         display: block;
         font: normal 400 1.7rem 'Poppins';
     }
 
-    .motivate{
+    .subtitle{
         color: #afaeae;
         display: block;
         font-weight: 400;
@@ -99,7 +98,7 @@ form.sign-up-form{
         }
     }
 
-    button.newAcc{
+    button[type="submit"]{
         width: 100%;
         border: none;
         border-radius: 2px;
@@ -107,7 +106,7 @@ form.sign-up-form{
         font-weight: 500;
     }
 
-    button.newAcc:hover{
+    button[type="submit"]:hover{
         background-color: #803792;
     }
 }
