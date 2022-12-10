@@ -108,7 +108,7 @@ jobs:
 
   notify_end:
     runs-on: ubuntu-latest
-    needs: [build]
+    needs: [notify_start, build]
     steps:
       - name: Notification Slack
         uses: rtCamp/action-slack-notify@v2
