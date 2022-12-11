@@ -68,6 +68,7 @@ export default class AuthService {
     };
 
     let res = await doPost(this.userPath, body, null);
+    return res
     // TODO: Como continuar o fluxo?
   }
 }
