@@ -40,24 +40,17 @@ export default class HomePage extends React.Component {
         },
       ],
 
-      Events: [
-
-      ],
+      events: [],
     };
   }
 
   componentDidMount() {
     const eventsService = new EventService();
     var events = eventsService.getAll();
-    var state_events = this.state.Events;
-
-    console.log(events);
-    console.log(state_events);
-
     events.then((res) => {
       this.setState({
         ...this.state,
-        Events: res,
+        events: res,
       });
     });
   }
@@ -73,7 +66,7 @@ export default class HomePage extends React.Component {
             <BasicSectionWidget title={"🔥 Em alta"} />
             <div className="card-list d-grid">
               <Row md={2}>
-                {this.state.Events.map((ev, i) => (
+                {this.state.events.map((ev, i) => (
                   <Col key={i}>
                     <EventCardWidget event={ev} />
                   </Col>
