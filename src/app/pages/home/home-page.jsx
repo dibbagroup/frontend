@@ -5,7 +5,7 @@ export default class HomePage extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: "Title",
+      title: "WELCOME TO DIBBA",
     };
   }
 

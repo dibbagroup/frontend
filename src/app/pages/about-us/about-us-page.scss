@@ -1,0 +1,14 @@
+.about-us-page {
+  min-height: 100vh;
+  max-height: max-content;
+  font-family: "Poppins";
+  text-align: justify;
+
+  :is(section) {
+    padding: 2em 0;
+
+    p {
+      line-height: 2;
+    }
+  }
+}
