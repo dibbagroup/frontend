@@ -47,7 +47,12 @@ export default class HomePage extends React.Component {
 
   componentDidMount() {
     const eventsService = new EventService();
-    let events = eventsService.getAll();
+    var events = eventsService.getAll();
+    var state_events = this.state.events;
+
+    console.log(events)
+    console.log(state_events)
+
     events.then((res) => {
       this.setState({
         ...this.state,
