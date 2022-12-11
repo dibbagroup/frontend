@@ -1,3 +1,7 @@
+*{
+  font-family: 'Poppins';
+}
+
 #notificationsQueue {
   width: 100vw;
   margin: 0 auto;
