@@ -40,7 +40,9 @@ export default class HomePage extends React.Component {
         },
       ],
 
-      Events: [],
+      Events: [
+
+      ],
     };
   }
 
@@ -71,7 +73,7 @@ export default class HomePage extends React.Component {
             <BasicSectionWidget title={"🔥 Em alta"} />
             <div className="card-list d-grid">
               <Row md={2}>
-                {this.state.Events.map((ev) => (
+                {this.state.Events.map((ev, i) => (
                   <Col key={i}>
                     <EventCardWidget event={ev} />
                   </Col>
