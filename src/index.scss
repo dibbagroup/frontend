@@ -1,0 +1,10 @@
+/* definindo variáveis para cores */
+:root {
+  --bs-dark: #1e1e1e;
+}
+
+/* sobrescrevendo classes padrão do Bootstrap */
+/* a marcação !important dá um peso maior a regra, sobrescrevendo regras prévias */
+.bg-dark {
+  background-color: var(--bs-dark) !important;
+}
