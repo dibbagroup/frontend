@@ -49,7 +49,6 @@ export default class HomePage extends React.Component {
     const eventsService = new EventService();
     let events = eventsService.getAll();
     events.then((res) => {
-      console.log(res);
       this.setState({
         ...this.state,
         events: res,
@@ -69,7 +68,7 @@ export default class HomePage extends React.Component {
             <div className="card-list d-grid">
               <Row md={2}>
                 {this.state.events.map((ev, i) => (
-                  <Col>
+                  <Col key={i}>
                     <EventCardWidget event={ev} />
                   </Col>
                 ))}
