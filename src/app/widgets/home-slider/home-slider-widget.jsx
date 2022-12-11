@@ -4,7 +4,7 @@ export const HomeSliderWidget = (props) => {
   return (
     <Carousel className="slider">
       {props.data.map((party, i) => (
-        <Carousel.Item>
+        <Carousel.Item key={i}>
           <img
             className="d-block w-100 slider-image"
             src={party.image}

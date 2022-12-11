@@ -36,7 +36,7 @@ export const EventCardWidget = (props) => {
           <div className="list">
             <Row md={2}>
               {infos.map((info, i) => (
-                <Col>
+                <Col key={i}>
                   <div className="info-row">
                     <small>{info.title}</small>
                     <p>{info.content}</p>
