@@ -1,7 +1,7 @@
 import React from "react";
 import { HeaderWidget } from "../../widgets/header/header-widget";
 import { BasicSectionWidget } from "../../widgets/basic-section/basic-section-widget";
-import { Button, Carousel, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "./home-page.scss";
 
 import image01 from "../../../assets/images/party/01.jpg";
@@ -79,7 +79,9 @@ export default class HomePage extends React.Component {
 
           <div className="events-bought mt-5">
             <BasicSectionWidget title={"🎉 Eventos comprados"} />
-            <p className="text-muted fw-lighter">Você não tem nenhum evento comprado até o momento...</p>
+            <p className="text-muted fw-lighter">
+              Você não tem nenhum evento comprado até o momento...
+            </p>
           </div>
         </div>
       </div>

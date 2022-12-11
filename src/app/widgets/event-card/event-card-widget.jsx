@@ -1,6 +1,6 @@
 import "./event-card-widget.scss";
 import image01 from "../../../assets/images/party/01.jpg";
-import { Button, Row, Col, Image } from "react-bootstrap";
+import { Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const EventCardWidget = (props) => {

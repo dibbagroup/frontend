@@ -1,5 +1,4 @@
-import useDebounce from "../utils/debounce";
-import { doGet, doAwaitGet, doPost } from "../utils/http";
+import { doAwaitGet, doPost } from "../utils/http";
 import TokenService from "./token-service";
 
 export default class EventService {
