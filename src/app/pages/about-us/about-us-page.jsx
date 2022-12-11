@@ -1,5 +1,6 @@
 import React from "react";
 import { BasicSectionWidget } from "../../widgets/basic-section/basic-section-widget";
+import { HeaderWidget } from "../../widgets/header/header-widget";
 import { MvvSectionWidget } from "../../widgets/mvv-section/mvv-section-widget";
 import "./about-us-page.scss";
 
@@ -31,6 +32,7 @@ export default class AboutUsPage extends React.Component {
   render() {
     return (
       <div className="about-us-page bg-dark text-light">
+        <HeaderWidget/>
         <div className="content w-50 mx-auto">
           <BasicSectionWidget title={"🚀 Sobre nós"} text={this.state.lorem} />
           <MvvSectionWidget
