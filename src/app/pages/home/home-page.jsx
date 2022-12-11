@@ -17,7 +17,6 @@ export default class HomePage extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: "WELCOME TO DIBBA",
       sliderItems: [
         {
           id: "abc-1",
@@ -41,17 +40,17 @@ export default class HomePage extends React.Component {
         },
       ],
 
-      events: [],
+      Events: [],
     };
   }
 
   componentDidMount() {
     const eventsService = new EventService();
     var events = eventsService.getAll();
-    var state_events = this.state.events;
+    var state_events = this.state.Events;
 
-    console.log(events)
-    console.log(state_events)
+    console.log(events);
+    console.log(state_events);
 
     events.then((res) => {
       this.setState({
@@ -72,7 +71,7 @@ export default class HomePage extends React.Component {
             <BasicSectionWidget title={"🔥 Em alta"} />
             <div className="card-list d-grid">
               <Row md={2}>
-                {this.state.events.map((ev, i) => (
+                {this.state.Events.map((ev) => (
                   <Col key={i}>
                     <EventCardWidget event={ev} />
                   </Col>
