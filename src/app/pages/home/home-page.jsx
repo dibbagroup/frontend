@@ -57,7 +57,7 @@ export default class HomePage extends React.Component {
     events.then((res) => {
       this.setState({
         ...this.state,
-        events: res,
+        Events: res,
       });
     });
   }
