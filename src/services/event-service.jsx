@@ -14,6 +14,11 @@ export default class EventService {
 
   async getAll() {
     let res = await doAwaitGet(this.eventPath, null);
+    if (res.data === undefined || res.data === null) {
+      this.events = [];
+      return this.events;
+    }
+
     this.events = res.data;
     return this.events;
   }
