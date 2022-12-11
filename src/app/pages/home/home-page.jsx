@@ -1,5 +1,6 @@
 import React from "react";
-import {TitleWidget} from "../../widgets/title/title-widget"
+import { HeaderWidget } from "../../widgets/header/header-widget";
+import { TitleWidget } from "../../widgets/title/title-widget";
 
 export default class HomePage extends React.Component {
   constructor() {
@@ -8,12 +9,13 @@ export default class HomePage extends React.Component {
       title: "WELCOME TO DIBBA",
     };
   }
-
+  
   render() {
     return (
       <div>
-        <TitleWidget title={this.state.title}/>
+        <HeaderWidget />
+        <TitleWidget title={this.state.title} />
       </div>
-    )
+    );
   }
 }
