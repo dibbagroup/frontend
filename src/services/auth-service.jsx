@@ -50,20 +50,20 @@ export default class AuthService {
   async signUp({
     firstName,
     lastName,
-    userName,
     phone,
     email,
     password,
+    birthDate,
     docNumber,
   }) {
     const body = {
       firstName: firstName,
       lastName: lastName,
-      username: userName,
       phone: phone,
       emailAddress: email,
       password: password,
       role: "CUSTOMER",
+      birthDate: birthDate,
       docNumber: docNumber,
     };
 
