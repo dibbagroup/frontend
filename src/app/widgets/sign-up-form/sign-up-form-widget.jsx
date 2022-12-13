@@ -8,8 +8,7 @@ export const SignUpFormWidget = props => {
 
     const registerService = new AuthService()
 
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("")
+    const [fullName, setFullName] = useState("")
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -55,16 +54,13 @@ export const SignUpFormWidget = props => {
             <Form.Text className="mb-3 subtitle">
                 Faça seu cadastro para continuar.
             </Form.Text>
-            <Form.Group className="flex">
-                <Form.Control type="text" className="form-input mb-2" placeholder="Primeiro Nome" onChange={(e)=> setFirstName(e.target.value)} required />
-                <Form.Control type="text" className="form-input mb-2" placeholder="Último Nome" onChange={(e)=> setLastName(e.target.value)} required />
-            </Form.Group>
+            <Form.Control type="text" className="form-input mb-2" placeholder="Nome Completo" onChange={(e)=> setFullName(e.target.value)} required />
+            <Form.Control type="email" className="form-input mb-2" placeholder="Email" onChange={(e)=> setEmail(e.target.value)} required />
+            <Form.Control type="text" className="form-input mb-2" placeholder="CPF" onChange={(e)=> setCpf(e.target.value)} required />
             <Form.Group className="flex">
                 <Form.Control type="tel" className="form-input mb-2" placeholder="Telefone" onChange={(e)=> setPhone(e.target.value)} required />
                 <Form.Control type={inputDateType} className="form-input mb-2" placeholder="Data de Nascimento" onFocus={() => { setInputDateType("date") }} onChange={(e)=> setBirthDate(e.target.value)} required />
             </Form.Group>
-            <Form.Control type="email" className="form-input mb-2" placeholder="Email" onChange={(e)=> setEmail(e.target.value)} required />
-            <Form.Control type="text" className="form-input mb-2" placeholder="CPF" onChange={(e)=> setCpf(e.target.value)} required />
             <Form.Group className="flex">
                 <div className="eye-password"><i className="fi fi-rs-eye" onClick={() => { handleShowPassword() }}></i></div>
                 <Form.Control type={showPasswordType} className="form-input mb-2" placeholder="Senha" onChange={(e)=> setPassword(e.target.value)} required />
@@ -75,7 +71,7 @@ export const SignUpFormWidget = props => {
                 <Form.Check type="checkbox" className="check" />
                 <Form.Text className="terms-text">Concordo com os termos de privacidade</Form.Text>
             </Form.Group>
-            <Button className="mt-4" type="submit" onClick={()=> {registerService.signUp(firstName, lastName, phone, email, password, birthDate, cpf)}}>
+            <Button className="mt-4" type="submit" onClick={()=> {registerService.signUp(fullName, phone, email, password, birthDate, cpf)}}>
                 Criar Conta
             </Button>
         </Form>
