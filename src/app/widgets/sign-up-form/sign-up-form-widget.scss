@@ -1,11 +1,11 @@
 form.sign-up-form{
-    width: 40%;
+    width: 45%;
     height: fit-content;
     text-align: center;
     margin: 0 auto;
     font-family: 'Poppins', sans-serif;
     background-color: #1E1E1E;
-    padding: 1.5em 2em;
+    padding: 1.2em 2em;
     border-radius: 20px;
     z-index: 1;
 
@@ -27,14 +27,15 @@ form.sign-up-form{
     .title{
         color: white;
         display: block;
-        font: normal 400 1.7rem 'Poppins';
+        font-weight: 400;
+        font-size: 1.7rem;
     }
 
     .subtitle{
         color: #afaeae;
         display: block;
         font-weight: 400;
-        font: normal 400 1rem 'Poppins';
+        font-size: 1rem;
     }
 
     div.flex{
@@ -68,7 +69,25 @@ form.sign-up-form{
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        margin-left: 29%;
+        margin-left: 13.5%;
+
+        i{
+            display: flex;
+            align-items: center;
+            color: white;
+            z-index: 1;
+            cursor: pointer;
+        }
+    }
+
+    div.eye-confirm-password{
+        position: absolute;
+        width: 5%;
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-left: 34%;
 
         i{
             display: flex;

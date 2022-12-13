@@ -13,8 +13,8 @@ export const SignUpFormWidget = props => {
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [cpf, setCpf] = useState("")
     const [birthDate, setBirthDate] = useState("")
+    const [cpf, setCpf] = useState("")
 
     const [inputDateType, setInputDateType] = useState("text")
 
@@ -60,17 +60,17 @@ export const SignUpFormWidget = props => {
                 <Form.Control type="text" className="form-input mb-2" placeholder="Último Nome" onChange={(e)=> setLastName(e.target.value)} required />
             </Form.Group>
             <Form.Group className="flex">
-                <Form.Control type="text" className="form-input mb-2" placeholder="CPF" onChange={(e)=> setCpf(e.target.value)} required />
                 <Form.Control type="tel" className="form-input mb-2" placeholder="Telefone" onChange={(e)=> setPhone(e.target.value)} required />
-            </Form.Group>
-            <Form.Group className="flex">
-                <Form.Control type="email" className="form-input mb-2" placeholder="Email" onChange={(e)=> setEmail(e.target.value)} required />
                 <Form.Control type={inputDateType} className="form-input mb-2" placeholder="Data de Nascimento" onFocus={() => { setInputDateType("date") }} onChange={(e)=> setBirthDate(e.target.value)} required />
             </Form.Group>
-            <div className="eye-password"><i className="fi fi-rs-eye" onClick={() => { handleShowPassword() }}></i></div>
-            <Form.Control type={showPasswordType} className="form-input mb-2" placeholder="Senha" onChange={(e)=> setPassword(e.target.value)} required />
-            <div className="eye-password"><i className="fi fi-rs-eye" onClick={() => { handleShowConfirmPassword() }}></i></div>
-            <Form.Control type={confirmShowPasswordType} className="form-input mb-2" placeholder="Confirme sua Senha" />
+            <Form.Control type="email" className="form-input mb-2" placeholder="Email" onChange={(e)=> setEmail(e.target.value)} required />
+            <Form.Control type="text" className="form-input mb-2" placeholder="CPF" onChange={(e)=> setCpf(e.target.value)} required />
+            <Form.Group className="flex">
+                <div className="eye-password"><i className="fi fi-rs-eye" onClick={() => { handleShowPassword() }}></i></div>
+                <Form.Control type={showPasswordType} className="form-input mb-2" placeholder="Senha" onChange={(e)=> setPassword(e.target.value)} required />
+                <div className="eye-confirm-password"><i className="fi fi-rs-eye" onClick={() => { handleShowConfirmPassword() }}></i></div>
+                <Form.Control type={confirmShowPasswordType} className="form-input mb-2" placeholder="Confirme sua Senha" />
+            </Form.Group>
             <Form.Group className="terms">
                 <Form.Check type="checkbox" className="check" />
                 <Form.Text className="terms-text">Concordo com os termos de privacidade</Form.Text>
