@@ -81,5 +81,3 @@ export const SignUpFormWidget = props => {
         </Form>
     )
 }
-
-/* usestate true e false */
