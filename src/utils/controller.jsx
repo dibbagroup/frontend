@@ -3,6 +3,7 @@ import AboutUsPage from "../app/pages/about-us/about-us-page";
 import HomePage from "../app/pages/home/home-page";
 import SignInPage from "../app/pages/sign-in/sign-in-page";
 import SignUpPage from "../app/pages/sign-up/sign-up-page";
+import RecoverPassword from "../app/pages/recover-password/recover-password-page";
 
 export const Controller = () => {
   return (
@@ -12,6 +13,7 @@ export const Controller = () => {
         <Route path={"/about"} element={<AboutUsPage />} />
         <Route path={"/sign-in"} element={<SignInPage />} />
         <Route path={"/sign-up"} element={<SignUpPage />} />
+        <Route path={"/recover-password"} element={<RecoverPassword />} />
       </Routes>
     </BrowserRouter>
   );
