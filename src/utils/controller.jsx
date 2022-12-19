@@ -4,6 +4,7 @@ import HomePage from "../app/pages/home/home-page";
 import SignInPage from "../app/pages/sign-in/sign-in-page";
 import SignUpPage from "../app/pages/sign-up/sign-up-page";
 import RecoverPassword from "../app/pages/recover-password/recover-password-page";
+import NewPassword from "../app/pages/new-password/new-password-page";
 
 export const Controller = () => {
   return (
@@ -14,6 +15,7 @@ export const Controller = () => {
         <Route path={"/sign-in"} element={<SignInPage />} />
         <Route path={"/sign-up"} element={<SignUpPage />} />
         <Route path={"/recover-password"} element={<RecoverPassword />} />
+        <Route path={"/new-password"} element={<NewPassword />} />
       </Routes>
     </BrowserRouter>
   );
