@@ -8,7 +8,8 @@ export const SignUpFormWidget = props => {
 
     const registerService = new AuthService()
 
-    const [fullName, setFullName] = useState("")
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -54,7 +55,10 @@ export const SignUpFormWidget = props => {
             <Form.Text className="mb-3 subtitle">
                 Faça seu cadastro para continuar.
             </Form.Text>
-            <Form.Control type="text" className="form-input mb-2" placeholder="Nome Completo" onChange={(e)=> setFullName(e.target.value)} required />
+            <Form.Group className="flex">
+                <Form.Control type="text" className="form-input mb-2" placeholder="Primeiro Nome" onChange={(e)=> setFirstName(e.target.value)} required />
+                <Form.Control type="text" className="form-input mb-2" placeholder="Último Nome" onChange={(e)=> setLastName(e.target.value)} required />
+            </Form.Group>
             <Form.Control type="email" className="form-input mb-2" placeholder="Email" onChange={(e)=> setEmail(e.target.value)} required />
             <Form.Control type="text" className="form-input mb-2" placeholder="CPF" onChange={(e)=> setCpf(e.target.value)} required />
             <Form.Group className="flex">
@@ -71,7 +75,7 @@ export const SignUpFormWidget = props => {
                 <Form.Check type="checkbox" className="check" />
                 <Form.Text className="terms-text">Concordo com os termos de privacidade</Form.Text>
             </Form.Group>
-            <Button className="mt-4" type="submit" onClick={()=> {registerService.signUp(fullName, phone, email, password, birthDate, cpf)}}>
+            <Button className="mt-4" type="submit" onClick={()=> {registerService.signUp(firstName, lastName, phone, email, password, birthDate, cpf)}}>
                 Criar Conta
             </Button>
         </Form>

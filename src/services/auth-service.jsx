@@ -48,7 +48,8 @@ export default class AuthService {
   }
 
   async signUp({
-    fullName,
+    firstName,
+    lastName,
     phone,
     email,
     password,
@@ -56,7 +57,8 @@ export default class AuthService {
     docNumber,
   }) {
     const body = {
-      fullName: fullName,
+      firstName: firstName,
+      lastName: lastName,
       phone: phone,
       emailAddress: email,
       password: password,
