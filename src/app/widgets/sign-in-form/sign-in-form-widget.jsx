@@ -35,11 +35,11 @@ export const SignInFormWidget = props => {
             <Form.Text className="mb-5 subtitle">
                 Faça seu login para continuar.
             </Form.Text>
-            <Form.Control className="form-input mb-3" type="email" placeholder="Email" onChange={(e)=> setUsername(e.target.value)} />
+            <Form.Control className="form-input mb-3" type="email" placeholder="Email" onChange={(e)=> setUsername(e.target.value)} required />
             <div className="eye-password"><i className="fi fi-rs-eye" onClick={()=> {handleShowPassword()}}></i></div>
-            <Form.Control type={showPasswordType} className="form-input mb-3" placeholder="Senha" onChange={(e)=> setPassword(e.target.value)} />
+            <Form.Control type={showPasswordType} className="form-input mb-3" placeholder="Senha" onChange={(e)=> setPassword(e.target.value)} required />
             <Form.Text className="recover-password mb-3">
-                <a href="/">Esqueceu a senha?</a>
+                <a href="/recover-password">Esqueceu a senha?</a>
             </Form.Text>
             <Button className="mb-2 login" type="submit" onClick={()=> {authenticationService.signIn(username, password)}}>
                 Entrar
@@ -55,7 +55,7 @@ export const SignInFormWidget = props => {
                     <hr />
                 </div>
             </div>
-            <Button className="mt-2 with-google" type="submit">
+            <Button className="mt-2 with-google" onClick={() => {alert("Desculpe. Essa funcionalidade está em andamento.")}}>
                 Entrar com Google
             </Button>
         </Form>

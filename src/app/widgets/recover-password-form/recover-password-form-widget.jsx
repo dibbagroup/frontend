@@ -9,9 +9,9 @@ export const RecoverPasswordWidget = props => {
                 <img src={logoDibba} alt="Logo Dibba" />
             </div>
 
-            <Form.Control className="form-input mb-3" type="text" placeholder="Insira seu email" />
+            <Form.Control className="form-input mb-3" type="email" placeholder="Insira seu email" />
  
-            <Button className="mt-3 recover" type="submit">
+            <Button className="mt-3 recover" onClick={() => {alert("Desculpe. Essa funcionalidade está em andamento.")}}>
                 Recuperar senha
             </Button>
         </Form>
