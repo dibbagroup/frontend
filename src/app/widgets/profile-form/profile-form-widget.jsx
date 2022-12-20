@@ -29,15 +29,7 @@ export const ProfileFormWidget = props => {
                 </Form.Group>
                 <Form.Group>
                     <Form.Control className="form-input mb-3" type="text" placeholder="Informação do User" disabled={!wantToEdit} />
-
-                    {wantToEdit ? 
-                    <Button className="mb-3" onClick={() => {saveFunction()}}>Salvar</Button>
-                    : null }
-
-                    {!wantToEdit ? 
-                    <Button className="mb-3" disabled>Salvar</Button>
-                    : null }
-
+                    <Button className="mb-3" onClick={() => {saveFunction()}} disabled={!wantToEdit}>Salvar</Button>
                 </Form.Group>
             </Form>
         </div>
