@@ -1,0 +1,60 @@
+.profile-form{
+    width: 70vw;
+    height: fit-content;
+    margin: 5% auto 0 auto;
+
+    .title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2%;
+
+        h2{
+            font-family: 'Poppins';
+            color: white;
+        }
+
+        small{
+            color: rgb(156, 156, 156);
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        small:hover{
+            color: rgb(197, 197, 197);
+        }
+    }
+
+    form{
+        div{
+            display: flex;
+            justify-content: space-between;
+
+            input.form-input{
+                width: 49%;
+                border-radius: 4px;
+                border: none;
+                background-color: #464646;
+                color: white;
+                height: 8vh;
+            }
+        
+            input.form-input:focus{
+                border: 1px ridge #8B409D;
+            }
+
+            button{
+                width: 49%;
+                height: 8vh;
+                background-color: #8B409D;
+                font-weight: 500;
+                border: none;
+            }
+        
+            button:hover{
+                background-color: #803792;
+            }
+        }
+    }
+}
