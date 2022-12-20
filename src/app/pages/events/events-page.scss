@@ -1,0 +1,33 @@
+$accentColor : #C7C7C7;
+$searchBarBg : #323232;
+
+.events-page {
+    width: 100vw;
+    height: 100vh;
+}
+
+.searchbar-events {
+
+    :is(input, span),
+    :is(input):focus {
+        background-color: $searchBarBg;
+        border: none;
+        color: $accentColor;
+        // Fontweight
+        box-shadow: 0 0 0 0;
+        border: 0 none;
+        outline: 0;
+    }
+
+    :is(input) {
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        font-size: medium;
+    }
+
+    :is(span) {
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        cursor: pointer;
+    }
+}

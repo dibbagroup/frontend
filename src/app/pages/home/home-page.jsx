@@ -20,22 +20,22 @@ export default class HomePage extends React.Component {
       sliderItems: [
         {
           id: "abc-1",
-          title: "Ano novo no P12",
+          title: "Welcome to DIBBA",
           image: image01,
         },
         {
           id: "abc-2",
-          title: "Ano novo no P12",
+          title: "Welcome to DIBBA",
           image: image02,
         },
         {
           id: "abc-3",
-          title: "Ano novo no P12",
+          title: "Welcome to DIBBA",
           image: image03,
         },
         {
           id: "abc-4",
-          title: "Ano novo no P12",
+          title: "Welcome to DIBBA",
           image: image04,
         },
       ],

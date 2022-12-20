@@ -41,7 +41,8 @@ export const SignInFormWidget = props => {
             <Form.Text className="recover-password mb-3">
                 <a href="/recover-password">Esqueceu a senha?</a>
             </Form.Text>
-            <Button className="mb-2 login" type="submit" onClick={()=> {authenticationService.signIn(username, password)}}>
+
+            <Button className="mb-2 login" onClick={()=> {authenticationService.signIn(username, password)}}>
                 Entrar
             </Button>
             <div>

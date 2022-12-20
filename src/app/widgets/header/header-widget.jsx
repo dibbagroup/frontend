@@ -23,7 +23,7 @@ export const HeaderWidget = (props) => {
   ];
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar className="w-100" bg="dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="/home">
           <Image src={logoDibba} width={40} />

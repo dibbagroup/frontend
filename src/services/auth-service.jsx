@@ -38,7 +38,15 @@ export default class AuthService {
     };
 
     let res = await doPost(this.authPath, JSON.stringify(body), null);
+    console.log(res)
+    if (typeof res === null || typeof res === Error) {
+      // Code...
+      console.log("erro")
+      return
+    }
+    
     this.tokenService.set(res.jwtToken);
+    /* window.location.href = "/" */
     return;
   }
 

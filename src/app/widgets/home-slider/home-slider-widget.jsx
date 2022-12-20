@@ -1,4 +1,5 @@
 import { Button, Carousel } from "react-bootstrap";
+import "./home-slider-widget.scss"
 
 export const HomeSliderWidget = (props) => {
   return (
