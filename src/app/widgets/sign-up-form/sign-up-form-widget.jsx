@@ -75,7 +75,7 @@ export const SignUpFormWidget = props => {
                 <Form.Check type="checkbox" className="check" />
                 <Form.Text className="terms-text">Concordo com os termos de privacidade</Form.Text>
             </Form.Group>
-            <Button className="mt-4" type="submit" onClick={()=> {registerService.signUp(firstName, lastName, phone, email, password, birthDate, cpf)}}>
+            <Button className="mt-4" onClick={()=> {registerService.signUp(firstName, lastName, phone, email, password, birthDate, cpf)}}>
                 Criar Conta
             </Button>
         </Form>

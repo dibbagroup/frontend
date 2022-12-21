@@ -53,7 +53,7 @@ export default class AuthService {
     };
 
     let res = await doPost(this.userPath, body, null);
-    window.location.href = "/";
+    /* window.location.href = "/"; */
     return res;
     // TODO: Como continuar o fluxo?
   }
