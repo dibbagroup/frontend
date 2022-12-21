@@ -9,31 +9,10 @@ export default class AuthService {
     this.tokenService = new TokenService();
   }
 
-  async signIn(username, password) {
-    /* TODO:
+  async signIn(email, password) {
 
-    MUDAR DE:
-    {
-      "username":"name",
-      "password":"pass"
-    }
-
-    PARA:
-    {
-      "username":"name",
-      "email": null,
-      "password":"pass"
-    }
-
-    IDEAL:
-    {
-      "email": "email",
-      "password":"pass"
-    }
-    
-    */
     const body = {
-      username: username,
+      emailAddress: email,
       password: password,
     };
 
@@ -61,7 +40,6 @@ export default class AuthService {
     phone,
     email,
     password,
-    birthDate,
     docNumber,
   }) {
     const body = {
@@ -71,7 +49,6 @@ export default class AuthService {
       emailAddress: email,
       password: password,
       role: "CUSTOMER",
-      birthDate: birthDate,
       docNumber: docNumber,
     };
 

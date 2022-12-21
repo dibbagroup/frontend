@@ -2,7 +2,7 @@
 :root {
   --bs-dark: #1e1e1e;
   --bs-darker: #1a1a1a;
-  --bs-lighter : rgb(220, 220, 220);
+  --bs-lighter: rgb(220, 220, 220);
 }
 
 /* sobrescrevendo classes padrão do Bootstrap */
@@ -17,4 +17,8 @@
 
 .bg-lighter {
   background-color: var(--bs-lighter) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
 }

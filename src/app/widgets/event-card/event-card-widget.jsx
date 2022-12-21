@@ -2,6 +2,9 @@ import "./event-card-widget.scss";
 import image01 from "../../../assets/images/party/01.jpg";
 import { Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import NotificationService from "../../../services/notification-service";
+import { NOTIFICATION_MSG_TYPE } from "../../../common/variables";
+
 
 export const EventCardWidget = (props) => {
   const event = props.event;
@@ -27,6 +30,8 @@ export const EventCardWidget = (props) => {
     },
   ];
 
+  const notificationService = new NotificationService();
+
   return (
     <div className="event-card-widget bg-darker rounded">
       <div className="head">
@@ -49,7 +54,8 @@ export const EventCardWidget = (props) => {
       </div>
       <Link
         className="w-100 text-center my-3 text-light fw-light"
-        to={`/events/${event.id}`}
+        onClick={() => {notificationService.add(NOTIFICATION_MSG_TYPE.ERROR, "Essa funcionalidade ainda não está disponível")}}
+        /* to={`/events/${event.id}`} */
       >
         Detalhes
       </Link>

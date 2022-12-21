@@ -1,7 +1,12 @@
 import { Button, Carousel } from "react-bootstrap";
 import "./home-slider-widget.scss"
+import NotificationService from "../../../services/notification-service";
+import { NOTIFICATION_MSG_TYPE } from "../../../common/variables";
 
 export const HomeSliderWidget = (props) => {
+
+  const notificationService = new NotificationService();
+
   return (
     <Carousel className="slider">
       {props.data.map((party, i) => (
@@ -18,7 +23,8 @@ export const HomeSliderWidget = (props) => {
               className="mb-5 mt-2 slider-btn-details"
               variant="outline-light"
               onClick={() => {
-                window.location.href = `/events/${party.id}`;
+                notificationService.add(NOTIFICATION_MSG_TYPE.ERROR, "Essa funcionalidade ainda não está disponível")
+                /* window.location.href = `/events/${party.id}`; */
               }}
             >
               Detalhes

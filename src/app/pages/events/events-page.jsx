@@ -1,32 +1,25 @@
 import React from "react";
-import { Form, InputGroup } from 'react-bootstrap';
-import './events-page.scss'
+import { Card, Form, InputGroup } from "react-bootstrap";
+import "./events-page.scss";
 
 import { HeaderWidget } from "../../widgets/header/header-widget";
 import { BasicSectionWidget } from "../../widgets/basic-section/basic-section-widget";
+import EventService from "../../../services/event-service";
 
+// TODO: Implementar a funcionalidade do componentDidMount para adicionar os eventos na tela
+//       problema atual é o setState que nao está conseguindo setar
 export default class EventsPage extends React.Component {
-  constructor() {
-    super()
-
+  constructor(props) {
+    super(props);
     this.state = {
       searchbarValue: "",
-      entries: [
-        {
-          title: "🎉 Pagode",
-          list: [
-            {
-              title: "Event 1"
-            }
-          ]
-        }
-      ]
-    }
+      events: null,
+    };
   }
 
   fetchEventsWithSearchbarValue() {
     // Code...
-    console.log(this.state.searchbarValue)
+    console.log(this.state.searchbarValue);
   }
 
   render() {
@@ -47,32 +40,31 @@ export default class EventsPage extends React.Component {
                 onChange={(e) => {
                   this.setState({
                     ...this.state,
-                    searchbarValue: e.target.value
-                  })
+                    searchbarValue: e.target.value,
+                  });
                 }}
               />
-              <InputGroup.Text onClick={() => { this.fetchEventsWithSearchbarValue() }}>
+              <InputGroup.Text
+                onClick={() => {
+                  this.fetchEventsWithSearchbarValue();
+                }}
+              >
                 <i className="fas fa-search" />
               </InputGroup.Text>
             </InputGroup>
           </div>
 
-          {
-            this.state.entries.map((row, i) => (
-              <div key={i}>
-                <BasicSectionWidget title={row.title} />
-                {
-                  row.list.map((ev, k) => (
-                    <div key={k}>
-                      <h1>{ev.title}</h1>
-                    </div>
-                  ))
-                }
-              </div>
-            ))
-          }
+          {this.state.events ? (
+            <div>
+              {this.state.events.map((ev, i) => {
+                <Card>
+                  <Card.Body>ABC</Card.Body>
+                </Card>;
+              })}
+            </div>
+          ) : null}
         </div>
       </div>
-    )
+    );
   }
 }

@@ -8,7 +8,7 @@ export const SignInFormWidget = props => {
 
     const authenticationService = new AuthService()
 
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const [showPassword, setShowPassword] = useState(false)
@@ -35,14 +35,14 @@ export const SignInFormWidget = props => {
             <Form.Text className="mb-5 subtitle">
                 Faça seu login para continuar.
             </Form.Text>
-            <Form.Control className="form-input mb-3" type="email" placeholder="Email" onChange={(e)=> setUsername(e.target.value)} required />
+            <Form.Control className="form-input mb-3" type="email" placeholder="Email" onChange={(e)=> setEmail(e.target.value)} required />
             <div className="eye-password"><i className="fi fi-rs-eye" onClick={()=> {handleShowPassword()}}></i></div>
             <Form.Control type={showPasswordType} className="form-input mb-3" placeholder="Senha" onChange={(e)=> setPassword(e.target.value)} required />
             <Form.Text className="recover-password mb-3">
                 <a href="/recover-password">Esqueceu a senha?</a>
             </Form.Text>
 
-            <Button className="mb-2 login" onClick={()=> {authenticationService.signIn(username, password)}}>
+            <Button className="mb-2 login" onClick={()=> {authenticationService.signIn(email, password)}}>
                 Entrar
             </Button>
             <div>
