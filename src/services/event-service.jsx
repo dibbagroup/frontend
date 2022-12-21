@@ -36,20 +36,18 @@ export default class EventService {
     return res.data;
   }
 
-  async getByName(name) {
-    let eventsToReturn = [];
+  async getByName(name = "") {
+    let resByName = [];
 
-    if (this.events.length === 0) {
-      await this.getAll();
-    }
-
-    this.events.forEach((event) => {
-      if (event.name.toUpperCase().includes(name.toUpperCase())) {
-        eventsToReturn.push(event);
-      }
+    await this.getAll().then((res) => {
+      res.forEach((e, _) => {
+        if (e.name.toUpperCase().includes(name.toUpperCase())) {
+          resByName.push(e);
+        }
+      });
     });
 
-    return eventsToReturn;
+    return resByName;
   }
 
   buy(body) {

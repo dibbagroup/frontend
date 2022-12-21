@@ -22,3 +22,10 @@
 .bg-primary {
   background-color: var(--primary) !important;
 }
+
+:is(input):focus {
+  border: none;
+  box-shadow: 0 0 0 0 !important;
+  border: 0 none !important;
+  outline: 0 !important;
+}

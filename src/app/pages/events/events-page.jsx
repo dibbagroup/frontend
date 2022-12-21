@@ -1,25 +1,35 @@
 import React from "react";
-import { Card, Form, InputGroup } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
 import "./events-page.scss";
 
 import { HeaderWidget } from "../../widgets/header/header-widget";
-import { BasicSectionWidget } from "../../widgets/basic-section/basic-section-widget";
 import EventService from "../../../services/event-service";
 
-// TODO: Implementar a funcionalidade do componentDidMount para adicionar os eventos na tela
-//       problema atual é o setState que nao está conseguindo setar
 export default class EventsPage extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       searchbarValue: "",
-      events: null,
+      events: [],
     };
   }
 
-  fetchEventsWithSearchbarValue() {
-    // Code...
-    console.log(this.state.searchbarValue);
+  async fetchEventsWithSearchbarValue() {
+    let service = new EventService();
+
+    await service.getByName(this.state.searchbarValue).then((res) => {
+      this.setState({ ...this.state, events: res });
+    });
+  }
+
+  componentDidMount() {
+    let service = new EventService();
+    let res = service.getAll();
+    res.then((data) => {
+      this.setState({ ...this.state, events: data });
+    });
+
+    return;
   }
 
   render() {
@@ -31,7 +41,7 @@ export default class EventsPage extends React.Component {
 
         <div className="content w-75 mx-auto mt-5">
           <div className="w-50 mx-auto mb-5">
-            <InputGroup className="mb-2 searchbar-events">
+            <InputGroup className="mb-2 search bar-events">
               <Form.Control
                 size="lg"
                 type="text"
@@ -42,6 +52,11 @@ export default class EventsPage extends React.Component {
                     ...this.state,
                     searchbarValue: e.target.value,
                   });
+                }}
+                onKeyDown={(e) => {
+                  if (e.code.toUpperCase() === "ENTER") {
+                    this.fetchEventsWithSearchbarValue();
+                  }
                 }}
               />
               <InputGroup.Text
@@ -54,15 +69,9 @@ export default class EventsPage extends React.Component {
             </InputGroup>
           </div>
 
-          {this.state.events ? (
-            <div>
-              {this.state.events.map((ev, i) => {
-                <Card>
-                  <Card.Body>ABC</Card.Body>
-                </Card>;
-              })}
-            </div>
-          ) : null}
+          {this.state.events.map((row, i) => (
+            <h1>{row.name}</h1>
+          ))}
         </div>
       </div>
     );

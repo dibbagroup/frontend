@@ -1,5 +1,7 @@
 import { doPost } from "../utils/http";
 import TokenService from "./token-service";
+import NotificationService from "./notification-service";
+import { NOTIFICATION_MSG_TYPE } from "../common/variables";
 
 export default class AuthService {
   constructor() {
@@ -10,22 +12,20 @@ export default class AuthService {
   }
 
   async signIn(email, password) {
-
     const body = {
       emailAddress: email,
       password: password,
     };
 
-    let res = await doPost(this.authPath, JSON.stringify(body), null);
-    console.log(res)
-    if (typeof res === null || typeof res === Error) {
-      // Code...
-      console.log("erro")
-      return
-    }
-    
-    this.tokenService.set(res.jwtToken);
-    /* window.location.href = "/" */
+    await doPost(this.authPath, JSON.stringify(body), null).then((res) => {
+      if (res.jwtToken) {
+        this.tokenService.set(res.jwtToken);
+        window.location.href = "/";
+      } else {
+        const notificationService = new NotificationService();
+        notificationService.consume(NOTIFICATION_MSG_TYPE.ERROR, "Senha e/ou e-mail incorretos");
+      }
+    });
     return;
   }
 
@@ -34,14 +34,7 @@ export default class AuthService {
     return;
   }
 
-  async signUp({
-    firstName,
-    lastName,
-    phone,
-    email,
-    password,
-    docNumber,
-  }) {
+  async signUp({ firstName, lastName, phone, email, password, docNumber }) {
     const body = {
       firstName: firstName,
       lastName: lastName,
