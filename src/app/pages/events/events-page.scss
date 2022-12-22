@@ -7,7 +7,6 @@ $searchBarBg : #323232;
 }
 
 .searchbar-events {
-
     :is(input, span),
     :is(input):focus {
         background-color: $searchBarBg;
