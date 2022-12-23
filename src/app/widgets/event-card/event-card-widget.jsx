@@ -11,10 +11,12 @@ export const EventCardWidget = (props) => {
   let startDate = new Date(event.startDateTime);
   let endDate = new Date(event.endDateTime);
 
+  console.table(event)
+
   const infos = [
     {
       title: "Local",
-      content: event.city,
+      content: event.addressDescription,
     },
     {
       title: "Data",
@@ -25,15 +27,15 @@ export const EventCardWidget = (props) => {
       content: `${startDate.getUTCHours()}:${startDate.getUTCMinutes()} - ${endDate.getUTCHours()}:${endDate.getUTCMinutes()}`,
     },
     {
-      title: "Idade mínima",
-      content: `${event.ageClassification} anos`,
-    },
+      title: "Gênero Musical",
+      content: event.musicalType
+    }
   ];
 
   const notificationService = new NotificationService();
 
   return (
-    <div className="event-card-widget bg-darker rounded">
+    <div className="event-card-widget bg-darker">
       <div className="head">
         <Image src={image01} />
         <h5>{event.name}</h5>
@@ -53,7 +55,7 @@ export const EventCardWidget = (props) => {
         </div>
       </div>
       <Link
-        className="w-100 text-center my-3 text-light fw-light"
+        className="w-100 text-center text-light fw-light"
         onClick={() => {notificationService.add(NOTIFICATION_MSG_TYPE.ERROR, "Essa funcionalidade ainda não está disponível")}}
         /* to={`/events/${event.id}`} */
       >

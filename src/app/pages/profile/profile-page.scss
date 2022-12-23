@@ -2,6 +2,18 @@
     width: 100vw;
     height: 100vh;
 
+    .case-success-widget{
+        position: relative;
+
+        .logout-area{
+            position: absolute;
+            width: 75%;
+            margin-left: 12.5%;
+            display: flex;
+            justify-content: end;
+        }
+    }
+
     .case-error-widget {
         height: calc(100% - 9%);
         display: flex;

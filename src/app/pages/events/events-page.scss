@@ -3,14 +3,13 @@ $searchBarBg : #323232;
 
 .events-page {
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
 }
 
 .searchbar-events {
     :is(input, span),
     :is(input):focus {
         background-color: $searchBarBg;
-        border: none;
         color: $accentColor;
         // Fontweight
         box-shadow: 0 0 0 0;

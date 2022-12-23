@@ -17,7 +17,7 @@ export const SignInFormWidget = (props) => {
   const [showPasswordType, setShowPasswordType] = useState("password");
 
   function handleShowPassword() {
-    if (showPassword === false) {
+    if (!showPassword) {
       setShowPassword(true);
       setShowPasswordType("text");
     } else {
@@ -61,21 +61,24 @@ export const SignInFormWidget = (props) => {
         onChange={(e) => setEmail(e.target.value)}
         required
       />
-      <div className="eye-password">
-        <i
-          className="fi fi-rs-eye"
-          onClick={() => {
-            handleShowPassword();
-          }}
-        ></i>
+      
+      <div className="input-password mb-3">
+        <Form.Control
+          type={showPasswordType}
+          placeholder="Senha"
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <div className="eye-password">
+          <i
+            className="fi fi-rs-eye"
+            onClick={() => {
+              handleShowPassword();
+            }}
+          ></i>
+        </div>
       </div>
-      <Form.Control
-        type={showPasswordType}
-        className="form-input mb-3"
-        placeholder="Senha"
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
+      
       <Form.Text className="recover-password mb-3">
         <a href="/recover-password">Esqueceu a senha?</a>
       </Form.Text>
@@ -100,7 +103,7 @@ export const SignInFormWidget = (props) => {
       <Button
         className="mt-2 with-google"
         onClick={() => {
-          alert("Desculpe. Essa funcionalidade está em andamento.");
+          notificationService.consume(NOTIFICATION_MSG_TYPE.ERROR, "Desculpe, essa funcionalidade ainda não está disponivel")
         }}
       >
         Entrar com Google

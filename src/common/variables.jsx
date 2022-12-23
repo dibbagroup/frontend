@@ -4,4 +4,4 @@ export const NOTIFICATION_MSG_TYPE = {
   ERROR: "DANGER",
 };
 
-export const USER_INFOS = null;
+export let USER_INFOS = null;

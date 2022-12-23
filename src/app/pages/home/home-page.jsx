@@ -61,11 +61,11 @@ export default class HomePage extends React.Component {
         <HeaderWidget />
         <HomeSliderWidget data={this.state.sliderItems} />
 
-        <div className="home-content w-50 mx-auto my-4 pt-4">
+        <div className="home-content w-75 mx-auto my-4 pt-4">
           <div className="most-viewed mt-5">
             <BasicSectionWidget title={"🔥 Em alta"} />
             <div className="card-list d-grid">
-              <Row md={2}>
+              <Row md={3}>
                 {this.state.events.map((ev, i) => (
                   <Col key={i}>
                     <EventCardWidget event={ev} />
