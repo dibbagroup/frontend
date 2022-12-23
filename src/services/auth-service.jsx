@@ -1,7 +1,7 @@
 import { doPost } from "../utils/http";
 import TokenService from "./token-service";
 import NotificationService from "./notification-service";
-import { NOTIFICATION_MSG_TYPE, USER_INFOS } from "../common/variables";
+import { NOTIFICATION_MSG_TYPE } from "../common/variables";
 import parseJwt from "../utils/parseJwt";
 
 export default class AuthService {

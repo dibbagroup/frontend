@@ -5,13 +5,10 @@ import { Link } from "react-router-dom";
 import NotificationService from "../../../services/notification-service";
 import { NOTIFICATION_MSG_TYPE } from "../../../common/variables";
 
-
 export const EventCardWidget = (props) => {
   const event = props.event;
   let startDate = new Date(event.startDateTime);
   let endDate = new Date(event.endDateTime);
-
-  console.table(event)
 
   const infos = [
     {
@@ -28,8 +25,8 @@ export const EventCardWidget = (props) => {
     },
     {
       title: "Gênero Musical",
-      content: event.musicalType
-    }
+      content: event.musicalType,
+    },
   ];
 
   const notificationService = new NotificationService();
@@ -56,7 +53,12 @@ export const EventCardWidget = (props) => {
       </div>
       <Link
         className="w-100 text-center text-light fw-light"
-        onClick={() => {notificationService.add(NOTIFICATION_MSG_TYPE.ERROR, "Essa funcionalidade ainda não está disponível")}}
+        onClick={() => {
+          notificationService.add(
+            NOTIFICATION_MSG_TYPE.ERROR,
+            "Essa funcionalidade ainda não está disponível"
+          );
+        }}
         /* to={`/events/${event.id}`} */
       >
         Detalhes

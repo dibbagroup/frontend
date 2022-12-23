@@ -1,5 +1,3 @@
-import { USER_INFOS } from "../common/variables";
-
 export default function parseJwt(token) {
     let base64Url = token.split('.')[1];
     let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');

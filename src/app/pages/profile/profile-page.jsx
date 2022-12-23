@@ -2,7 +2,6 @@ import React from "react";
 import { HeaderWidget } from "../../widgets/header/header-widget";
 import { ProfileFormWidget } from "../../widgets/profile-form/profile-form-widget";
 import "./profile-page.scss";
-import { USER_INFOS } from "../../../common/variables";
 import { Button } from 'react-bootstrap'
 import AuthService from "../../../services/auth-service";
 

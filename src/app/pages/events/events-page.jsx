@@ -11,29 +11,45 @@ export default class EventsPage extends React.Component {
     this.state = {
       searchbarValue: "",
       events: [],
+      eventsFiltered: [],
       isLoading: true,
     };
   }
 
   async fetchEventsWithSearchbarValue() {
     this.setState({ ...this.state, isLoading: true });
-    let service = new EventService();
 
     if (this.state.searchbarValue.trim() === "") {
-      this.setState({ ...this.state, isLoading: false });
+      this.setState({
+        ...this.state,
+        isLoading: false,
+        eventsFiltered: this.state.events,
+      });
       return;
     }
 
-    await service.getByName(this.state.searchbarValue).then((res) => {
-      this.setState({ ...this.state, events: res, isLoading: false });
+    let resByName = [];
+    this.state.events.forEach((e, _) => {
+      if (
+        e.name.toUpperCase().includes(this.state.searchbarValue.toUpperCase())
+      ) {
+        resByName.push(e);
+      }
     });
+
+    this.setState({ ...this.state, eventsFiltered: resByName });
   }
 
   componentDidMount() {
     let service = new EventService();
     let res = service.getAll();
     res.then((data) => {
-      this.setState({ ...this.state, events: data, isLoading: false });
+      this.setState({
+        ...this.state,
+        events: data,
+        eventsFiltered: data,
+        isLoading: false,
+      });
     });
 
     return;
@@ -83,7 +99,7 @@ export default class EventsPage extends React.Component {
           ) : null}
 
           {!this.state.isLoading &&
-            this.state.events.map((row, i) => (
+            this.state.eventsFiltered.map((row, i) => (
               <Card className="bg-dark border border-secondary my-2 text-light">
                 <Card.Body>
                   <h4>{row.name}</h4>
