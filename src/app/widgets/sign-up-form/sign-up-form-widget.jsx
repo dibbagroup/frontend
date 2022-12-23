@@ -66,16 +66,20 @@ export const SignUpFormWidget = props => {
                 <Form.Control type={inputDateType} className="form-input mb-2" placeholder="Data de Nascimento" onFocus={() => { setInputDateType("date") }} onChange={(e)=> setBirthDate(e.target.value)} required />
             </Form.Group>
             <Form.Group className="flex">
-                <div className="eye-password"><i className="fi fi-rs-eye" onClick={() => { handleShowPassword() }}></i></div>
-                <Form.Control type={showPasswordType} className="form-input mb-2" placeholder="Senha" onChange={(e)=> setPassword(e.target.value)} required />
-                <div className="eye-confirm-password"><i className="fi fi-rs-eye" onClick={() => { handleShowConfirmPassword() }}></i></div>
-                <Form.Control type={confirmShowPasswordType} className="form-input mb-2" placeholder="Confirme sua Senha" />
+                <div className="input-password">
+                    <Form.Control type={showPasswordType} className="form-input mb-2" placeholder="Senha" onChange={(e)=> setPassword(e.target.value)} required />
+                    <div className="eye-password"><i className="fi fi-rs-eye" onClick={() => { handleShowPassword() }}></i></div>
+                </div>
+                <div className="input-password">
+                    <Form.Control type={confirmShowPasswordType} className="form-input mb-2" placeholder="Confirme sua Senha" />
+                    <div className="eye-password"><i className="fi fi-rs-eye" onClick={() => { handleShowConfirmPassword() }}></i></div>
+                </div>
             </Form.Group>
-            <Form.Group className="terms">
+            <Form.Group className="terms mt-2">
                 <Form.Check type="checkbox" className="check" />
                 <Form.Text className="terms-text">Concordo com os termos de privacidade</Form.Text>
             </Form.Group>
-            <Button className="mt-4" type="submit" onClick={()=> {registerService.signUp(firstName, lastName, phone, email, password, birthDate, cpf)}}>
+            <Button className="mt-3" onClick={()=> {registerService.signUp(firstName, lastName, phone, email, password, birthDate, cpf)}}>
                 Criar Conta
             </Button>
         </Form>

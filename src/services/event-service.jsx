@@ -36,22 +36,6 @@ export default class EventService {
     return res.data;
   }
 
-  async getByName(name) {
-    let eventsToReturn = [];
-
-    if (this.events.length === 0) {
-      await this.getAll();
-    }
-
-    this.events.forEach((event) => {
-      if (event.name.toUpperCase().includes(name.toUpperCase())) {
-        eventsToReturn.push(event);
-      }
-    });
-
-    return eventsToReturn;
-  }
-
   buy(body) {
     return doPost(process.env.REACT_APP_BACK_URL_EVENTS_BUY, body, null);
   }

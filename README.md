@@ -1,7 +1,11 @@
-# ReactJS template repository
+TODO:
+brew install mkcert
+mkcert -install
+mkdir reactcert
+mkcert -key-file ./reactcert/key.pem -cert-file ./reactcert/cert.pem "localhost"
 
-
-## ⚠️ Warnings!
-- **Always remember to update de `package.json` file**
-- **Keep the arquitecture at least similar**
-- **Use the methods inside `src/utils` `src/service`**
+<!-- SCRIPTS REACT -->
+"scripts": {
+    "start":
+        "HTTPS=true <strong>SSL_CRT_FILE=./reactcert/cert.pem SSL_KEY_FILE=./reactcert/key.pem</strong> react-scripts start"
+}

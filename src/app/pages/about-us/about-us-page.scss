@@ -3,9 +3,10 @@
   max-height: max-content;
   font-family: "Poppins";
   text-align: justify;
+  padding-bottom: 2em;
 
   :is(section) {
-    padding: 2em 0;
+    padding: 3em 0 0 0;
 
     p {
       line-height: 2;

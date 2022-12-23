@@ -20,22 +20,22 @@ export default class HomePage extends React.Component {
       sliderItems: [
         {
           id: "abc-1",
-          title: "Ano novo no P12",
+          title: "Welcome to DIBBA",
           image: image01,
         },
         {
           id: "abc-2",
-          title: "Ano novo no P12",
+          title: "Welcome to DIBBA",
           image: image02,
         },
         {
           id: "abc-3",
-          title: "Ano novo no P12",
+          title: "Welcome to DIBBA",
           image: image03,
         },
         {
           id: "abc-4",
-          title: "Ano novo no P12",
+          title: "Welcome to DIBBA",
           image: image04,
         },
       ],
@@ -46,7 +46,7 @@ export default class HomePage extends React.Component {
 
   componentDidMount() {
     const eventsService = new EventService();
-    var events = eventsService.getAll();
+    let events = eventsService.getAll();
     events.then((res) => {
       this.setState({
         ...this.state,
@@ -61,11 +61,11 @@ export default class HomePage extends React.Component {
         <HeaderWidget />
         <HomeSliderWidget data={this.state.sliderItems} />
 
-        <div className="home-content w-50 mx-auto my-4 pt-4">
+        <div className="home-content w-75 mx-auto my-4 pt-4">
           <div className="most-viewed mt-5">
             <BasicSectionWidget title={"🔥 Em alta"} />
             <div className="card-list d-grid">
-              <Row md={2}>
+              <Row md={3}>
                 {this.state.events.map((ev, i) => (
                   <Col key={i}>
                     <EventCardWidget event={ev} />

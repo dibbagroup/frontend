@@ -2,6 +2,8 @@ import "./event-card-widget.scss";
 import image01 from "../../../assets/images/party/01.jpg";
 import { Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import NotificationService from "../../../services/notification-service";
+import { NOTIFICATION_MSG_TYPE } from "../../../common/variables";
 
 export const EventCardWidget = (props) => {
   const event = props.event;
@@ -11,7 +13,7 @@ export const EventCardWidget = (props) => {
   const infos = [
     {
       title: "Local",
-      content: event.city,
+      content: event.addressDescription,
     },
     {
       title: "Data",
@@ -22,13 +24,15 @@ export const EventCardWidget = (props) => {
       content: `${startDate.getUTCHours()}:${startDate.getUTCMinutes()} - ${endDate.getUTCHours()}:${endDate.getUTCMinutes()}`,
     },
     {
-      title: "Idade mínima",
-      content: `${event.ageClassification} anos`,
+      title: "Gênero Musical",
+      content: event.musicalType,
     },
   ];
 
+  const notificationService = new NotificationService();
+
   return (
-    <div className="event-card-widget bg-darker rounded">
+    <div className="event-card-widget bg-darker">
       <div className="head">
         <Image src={image01} />
         <h5>{event.name}</h5>
@@ -48,8 +52,14 @@ export const EventCardWidget = (props) => {
         </div>
       </div>
       <Link
-        className="w-100 text-center my-3 text-light fw-light"
-        to={`/events/${event.id}`}
+        className="w-100 text-center text-light fw-light"
+        onClick={() => {
+          notificationService.add(
+            NOTIFICATION_MSG_TYPE.ERROR,
+            "Essa funcionalidade ainda não está disponível"
+          );
+        }}
+        /* to={`/events/${event.id}`} */
       >
         Detalhes
       </Link>

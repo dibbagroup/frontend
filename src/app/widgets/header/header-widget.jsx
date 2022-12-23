@@ -23,9 +23,9 @@ export const HeaderWidget = (props) => {
   ];
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar className="w-100" bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href={paths[0].href}>
           <Image src={logoDibba} width={40} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

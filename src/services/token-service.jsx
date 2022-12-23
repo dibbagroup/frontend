@@ -8,7 +8,7 @@ export default class TokenService {
   }
 
   set(value) {
-    sessionStorage.setItem(this.tokenKey, value);
+    sessionStorage.setItem(this.tokenKey, `Bearer ${value}`);
   }
 
   remove() {
