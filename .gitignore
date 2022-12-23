@@ -7,7 +7,7 @@ yarn-error.log*
 lerna-debug.log*
 package-lock.json
 
-build_*/
+build/
 *.cache
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -73,7 +73,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+# .env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)

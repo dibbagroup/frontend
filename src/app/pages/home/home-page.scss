@@ -1,0 +1,14 @@
+.home-page {
+  height: max-content;
+  width: 100vw;
+
+  .slider {
+    .slider-image {
+      filter: blur(2px) brightness(70%);
+    }
+
+    .slider-btn-details {
+      font-size: smaller;
+    }
+  }
+}
