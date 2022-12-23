@@ -1,5 +1,8 @@
 import { doPost } from "../utils/http";
 import TokenService from "./token-service";
+import NotificationService from "./notification-service";
+import { NOTIFICATION_MSG_TYPE } from "../common/variables";
+import parseJwt from "../utils/parseJwt";
 
 export default class AuthService {
   constructor() {
@@ -9,65 +12,56 @@ export default class AuthService {
     this.tokenService = new TokenService();
   }
 
-  async signIn(username, password) {
-    /* TODO:
-
-    MUDAR DE:
-    {
-      "username":"name",
-      "password":"pass"
-    }
-
-    PARA:
-    {
-      "username":"name",
-      "email": null,
-      "password":"pass"
-    }
-
-    IDEAL:
-    {
-      "email": "email",
-      "password":"pass"
-    }
-    
-    */
+  async signIn(email, password) {
     const body = {
-      username: username,
+      emailAddress: email,
       password: password,
     };
 
-    let res = await doPost(this.authPath, JSON.stringify(body), null);
-    this.tokenService.set(res.jwtToken);
+    await doPost(this.authPath, JSON.stringify(body), null)
+      .then((res) => {
+        if (res.jwtToken) {
+          this.tokenService.set(res.jwtToken);
+          sessionStorage.setItem(process.env.REACT_APP_SESSION_STORAGE_USER_KEY, JSON.stringify(parseJwt(res.jwtToken)))
+          window.location.href = "/";
+        } else {
+          const notificationService = new NotificationService();
+          notificationService.consume(NOTIFICATION_MSG_TYPE.ERROR, "Senha e/ou e-mail incorretos");
+        }
+      });
     return;
   }
 
   signOut() {
     this.tokenService.remove();
+    sessionStorage.removeItem(process.env.REACT_APP_SESSION_STORAGE_USER_KEY)
+    window.location.href = "/"
     return;
   }
 
-  async signUp({
+  async signUp(
     firstName,
     lastName,
-    userName,
     phone,
     email,
     password,
-    docNumber,
-  }) {
+    birthDate,
+    docNumber
+  ) {
     const body = {
       firstName: firstName,
       lastName: lastName,
-      username: userName,
       phone: phone,
       emailAddress: email,
       password: password,
       role: "CUSTOMER",
-      docNumber: docNumber,
+      birthDate: birthDate,
+      docNumber: docNumber
     };
 
     let res = await doPost(this.userPath, body, null);
+    /* window.location.href = "/"; */
+    return res;
     // TODO: Como continuar o fluxo?
   }
 }

@@ -1,5 +1,4 @@
-import useDebounce from "../utils/debounce";
-import { doGet, doAwaitGet, doPost } from "../utils/http";
+import { doAwaitGet, doPost } from "../utils/http";
 import TokenService from "./token-service";
 
 export default class EventService {
@@ -15,6 +14,11 @@ export default class EventService {
 
   async getAll() {
     let res = await doAwaitGet(this.eventPath, null);
+    if (res.data === undefined || res.data === null) {
+      this.events = [];
+      return this.events;
+    }
+
     this.events = res.data;
     return this.events;
   }
@@ -30,22 +34,6 @@ export default class EventService {
     );
 
     return res.data;
-  }
-
-  async getByName(name) {
-    let eventsToReturn = [];
-
-    if (this.events.length === 0) {
-      await this.getAll();
-    }
-
-    this.events.forEach((event) => {
-      if (event.name.toUpperCase().includes(name.toUpperCase())) {
-        eventsToReturn.push(event);
-      }
-    });
-
-    return eventsToReturn;
   }
 
   buy(body) {
