@@ -1,7 +1,8 @@
 import React from "react";
-import { HeaderWidget } from "../../widgets/header/header-widget";
-import { BasicSectionWidget } from "../../widgets/basic-section/basic-section-widget";
 import { Row, Col } from "react-bootstrap";
+import { HeaderWidget } from "../../widgets/header/header-widget";
+import { FooterWidget } from "../../widgets/footer/footer-widget";
+import { BasicSectionWidget } from "../../widgets/basic-section/basic-section-widget";
 import "./home-page.scss";
 
 import image01 from "../../../assets/images/party/01.jpg";
@@ -82,6 +83,8 @@ export default class HomePage extends React.Component {
             </p>
           </div>
         </div>
+
+        <FooterWidget />
       </div>
     );
   }

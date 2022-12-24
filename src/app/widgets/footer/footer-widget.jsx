@@ -1,0 +1,47 @@
+import "./footer-widget.scss"
+ 
+export const FooterWidget = props => {
+    return (
+        <footer className="pt-5">
+            <hr />
+ 
+            <div className="content text-light w-75 mx-auto d-flex px-5 py-3 justify-content-between">
+                <div className="anchors">
+                    <h5>Institucional</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Politica de Privacidade</a>
+                        </li>
+                        <li>
+                            <a href="about">Sobre nós</a>
+                        </li>
+                    </ul>
+                </div>
+ 
+                <div>
+                    <h5>Atendimento</h5>
+                    <ul>
+                        <li>
+                            <a href="mailto:dibbabr@gmail.com" rel="noreferrer">📧 dibbabr@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="#">📞 +55 (48) 99850-0989</a>
+                        </li>
+                    </ul>
+                </div>
+ 
+                <div>
+                    <h5>Redes sociais</h5>
+                    <ul>
+                        <li>
+                            <a href="https://www.instagram.com/dibbabr/" target="_blank" rel="noreferrer">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/dibbabr/" target="_blank" rel="noreferrer">Linkedin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    )
+}
