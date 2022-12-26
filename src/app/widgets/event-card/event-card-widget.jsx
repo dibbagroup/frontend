@@ -24,8 +24,8 @@ export const EventCardWidget = (props) => {
       content: `${startDate.getUTCHours()}:${startDate.getUTCMinutes()} - ${endDate.getUTCHours()}:${endDate.getUTCMinutes()}`,
     },
     {
-      title: "Gênero Musical",
-      content: event.musicalType,
+      title: "Idade Mínima",
+      content: event.ageClassification,
     },
   ];
 

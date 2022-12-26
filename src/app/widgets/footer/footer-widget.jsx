@@ -10,10 +10,13 @@ export const FooterWidget = props => {
                     <h5>Institucional</h5>
                     <ul>
                         <li>
-                            <a href="#">Politica de Privacidade</a>
+                            <a href="#">Politica de privacidade</a>
                         </li>
                         <li>
-                            <a href="about">Sobre nós</a>
+                            <a href="#">Termos e condições de uso</a>
+                        </li>
+                        <li>
+                            <a href="https://form.jotform.com/223583463072658" rel="noreferrer" target="_blank">Seja um representante DIBBA</a>
                         </li>
                     </ul>
                 </div>
@@ -22,10 +25,10 @@ export const FooterWidget = props => {
                     <h5>Atendimento</h5>
                     <ul>
                         <li>
-                            <a href="mailto:dibbabr@gmail.com" rel="noreferrer">📧 dibbabr@gmail.com</a>
+                            <a href="mailto:contatodibba@gmail.com" rel="noreferrer">contatodibba@gmail.com</a>
                         </li>
                         <li>
-                            <a href="#">📞 +55 (48) 99850-0989</a>
+                            <a href="#">+55 (48) 99850-0989</a>
                         </li>
                     </ul>
                 </div>

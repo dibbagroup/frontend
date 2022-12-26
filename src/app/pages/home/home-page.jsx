@@ -78,7 +78,7 @@ export default class HomePage extends React.Component {
 
           <div className="events-bought mt-5">
             <BasicSectionWidget title={"🎉 Eventos comprados"} />
-            <p className="text-muted fw-lighter">
+            <p className="text-light text-muted fw-lighter ">
               Você não tem nenhum evento comprado até o momento...
             </p>
           </div>

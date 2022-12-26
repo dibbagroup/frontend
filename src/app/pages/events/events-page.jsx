@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Card, Form, InputGroup } from "react-bootstrap";
+import { FooterWidget } from "../../widgets/footer/footer-widget";
 import "./events-page.scss";
 
 import { HeaderWidget } from "../../widgets/header/header-widget";
@@ -116,6 +117,8 @@ export default class EventsPage extends React.Component {
               </Card>
             ))}
         </div>
+
+        <FooterWidget />
       </div>
     );
   }
