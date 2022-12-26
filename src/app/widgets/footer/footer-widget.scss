@@ -11,7 +11,7 @@ footer {
         padding: 0;
 
         li {
-            a {
+            a, button {
                 color: gray;
                 font-weight: 200;
                 text-decoration: none;
@@ -21,6 +21,16 @@ footer {
             a:hover {
                 color: #FFF;
             }
+
+            button:hover {
+                color: #FFF;
+            }
+
+            .privacy-politic-button, .terms-conditions-button{
+                border: none;
+                background-color: transparent;
+            }
+
         }
     }
 }
