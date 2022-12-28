@@ -5,7 +5,6 @@ import { FooterWidget } from "../../widgets/footer/footer-widget";
 import { BasicSectionWidget } from "../../widgets/basic-section/basic-section-widget";
 import "./home-page.scss";
 
-import image01 from "../../../assets/images/party/01.jpg";
 import image02 from "../../../assets/images/party/02.jpg";
 import image03 from "../../../assets/images/party/03.jpg";
 import image04 from "../../../assets/images/party/04.jpg";
@@ -19,11 +18,6 @@ export default class HomePage extends React.Component {
     super();
     this.state = {
       sliderItems: [
-        {
-          id: "abc-1",
-          title: "Welcome to DIBBA",
-          image: image01,
-        },
         {
           id: "abc-2",
           title: "Welcome to DIBBA",
@@ -69,7 +63,10 @@ export default class HomePage extends React.Component {
               <Row md={3}>
                 {this.state.events.map((ev, i) => (
                   <Col key={i}>
-                    <EventCardWidget event={ev} />
+                    { ev.name === "Welcome Dibba" && (
+                      <EventCardWidget event={ev} />
+                      )
+                    }
                   </Col>
                 ))}
               </Row>

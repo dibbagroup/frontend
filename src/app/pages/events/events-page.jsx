@@ -101,20 +101,26 @@ export default class EventsPage extends React.Component {
 
           {!this.state.isLoading &&
             this.state.eventsFiltered.map((row, i) => (
-              <Card className="bg-dark border border-secondary my-2 text-light">
-                <Card.Body>
-                  <h4>{row.name}</h4>
-                  <small className="text-secondary">{row.description}</small>
+              <div>
+                {row.name === "Welcome Dibba" && (
+                  <Card className="bg-dark border border-secondary my-2 text-light">
 
-                  <div
-                    className="d-flex justify-content-end"
-                    style={{ gap: "16px" }}
-                  >
-                    <Button variant="outline-light">Ver detalhes</Button>
-                    <Button variant="light">Comprar</Button>
-                  </div>
-                </Card.Body>
-              </Card>
+                    <Card.Body>
+                      <h4>{row.name}</h4>
+                      <small className="text-secondary">{row.description}</small>
+
+                      <div
+                        className="d-flex justify-content-end"
+                        style={{ gap: "16px" }}
+                      >
+                        <Button variant="outline-light">Ver detalhes</Button>
+                        <Button variant="light">Comprar</Button>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                )
+                }
+              </div>
             ))}
         </div>
 
