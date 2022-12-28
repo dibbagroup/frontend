@@ -2,6 +2,7 @@ import React from "react";
 import { BasicSectionWidget } from "../../widgets/basic-section/basic-section-widget";
 import { HeaderWidget } from "../../widgets/header/header-widget";
 import { MvvSectionWidget } from "../../widgets/mvv-section/mvv-section-widget";
+import { FooterWidget } from "../../widgets/footer/footer-widget";
 import "./about-us-page.scss";
 
 export default class AboutUsPage extends React.Component {
@@ -40,6 +41,7 @@ export default class AboutUsPage extends React.Component {
             subSections={this.state.subSections}
           />
         </div>
+        <FooterWidget />
       </div>
     );
   }
