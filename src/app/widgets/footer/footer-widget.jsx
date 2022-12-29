@@ -1,17 +1,17 @@
 import "./footer-widget.scss"
-import React, { useState } from 'react';
+/* import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import Modal from 'react-bootstrap/Modal'; */
  
 export const FooterWidget = props => {
-    const [show1, setShow1] = useState(false);
+/*     const [show1, setShow1] = useState(false);
     const [show2, setShow2] = useState(false);
 
     const CloseModalP = () => setShow1(false);
     const OpenModalP = () => setShow1(true);
 
     const CloseModalT = () => setShow2(false);
-    const OpenModalT = () => setShow2(true);
+    const OpenModalT = () => setShow2(true); */
 
     return (
         <footer className="pt-5">
@@ -40,7 +40,7 @@ export const FooterWidget = props => {
                             <a href="mailto:contatodibba@gmail.com" rel="noreferrer">contatodibba@gmail.com</a>
                         </li>
                         <li>
-                            <a href="#">+55 (48) 99850-0989</a>
+                            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5548998500989">+55 (48) 99850-0989</a>
                         </li>
                     </ul>
                 </div>
