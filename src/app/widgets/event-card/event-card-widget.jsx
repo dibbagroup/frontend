@@ -1,5 +1,5 @@
 import "./event-card-widget.scss";
-import image01 from "../../../assets/images/party/01.jpg";
+import image04 from "../../../assets/images/party/04.jpg";
 import { Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import NotificationService from "../../../services/notification-service";
@@ -17,15 +17,15 @@ export const EventCardWidget = (props) => {
     },
     {
       title: "Data",
-      content: `${startDate.getDay()}/${startDate.getUTCMonth()}/${startDate.getUTCFullYear()}`,
+      content: `${startDate.getUTCDate()}/${startDate.getUTCDate()}/${startDate.getUTCFullYear()}`,
     },
     {
       title: "Horário",
-      content: `${startDate.getUTCHours()}:${startDate.getUTCMinutes()} - ${endDate.getUTCHours()}:${endDate.getUTCMinutes()}`,
+      content: `${startDate.getHours()}:${startDate.getMinutes()} - ${endDate.getUTCHours()}:${endDate.getUTCMinutes()}`,
     },
     {
-      title: "Gênero Musical",
-      content: event.musicalType,
+      title: "Idade Mínima",
+      content: event.ageClassification,
     },
   ];
 
@@ -34,7 +34,7 @@ export const EventCardWidget = (props) => {
   return (
     <div className="event-card-widget bg-darker">
       <div className="head">
-        <Image src={image01} />
+        <Image src={image04} />
         <h5>{event.name}</h5>
         <div className="infos text-light">
           <div className="list">

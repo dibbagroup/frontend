@@ -1,0 +1,36 @@
+footer {
+    hr {
+        background-color: #FFF;
+        height: 1px;
+        border-radius: 100%;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            a, button {
+                color: gray;
+                font-weight: 200;
+                text-decoration: none;
+                transition: 0.2s ease-in-out;
+            }
+
+            a:hover {
+                color: #FFF;
+            }
+
+            button:hover {
+                color: #FFF;
+            }
+
+            .privacy-politic-button, .terms-conditions-button{
+                border: none;
+                background-color: transparent;
+            }
+
+        }
+    }
+}
