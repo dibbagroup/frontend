@@ -71,7 +71,7 @@ export const SignUpFormWidget = props => {
                     <div className="eye-password"><i className="fi fi-rs-eye" onClick={() => { handleShowPassword() }}></i></div>
                 </div>
                 <div className="input-password">
-                    <Form.Control type={confirmShowPasswordType} className="form-input mb-2" placeholder="Confirme sua Senha" />
+                    <Form.Control type={confirmShowPasswordType} className="form-input mb-2" placeholder="Confirme sua Senha" required/>
                     <div className="eye-password"><i className="fi fi-rs-eye" onClick={() => { handleShowConfirmPassword() }}></i></div>
                 </div>
             </Form.Group>

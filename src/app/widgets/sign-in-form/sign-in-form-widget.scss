@@ -89,16 +89,18 @@ form.sign-in-form{
         }
     }
     
-    .recover-password{
+    div.create-recover{
         width: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
 
-        a{
-            font: normal 400 0.9rem 'Poppins';
-            text-decoration: none;
-            color: #BDBDBD;
-       }
+        .text{
+            a{
+                font: normal 400 0.9rem 'Poppins';
+                text-decoration: none;
+                color: #BDBDBD;
+            }
+        }
     }
 
     button.login{

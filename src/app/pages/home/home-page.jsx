@@ -1,10 +1,13 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import Image from 'react-bootstrap/Image';
 import { HeaderWidget } from "../../widgets/header/header-widget";
 import { FooterWidget } from "../../widgets/footer/footer-widget";
 import { BasicSectionWidget } from "../../widgets/basic-section/basic-section-widget";
 import "./home-page.scss";
 
+import mobileMockup from "../../../assets/images/mobileMockup.png"
+import qrCode from "../../../assets/images/download-qrcode.png"
 import image02 from "../../../assets/images/party/02.jpg";
 import image03 from "../../../assets/images/party/03.jpg";
 import image04 from "../../../assets/images/party/04.jpg";
@@ -63,23 +66,43 @@ export default class HomePage extends React.Component {
               <Row md={3}>
                 {this.state.events.map((ev, i) => (
                   <Col key={i}>
-                    { ev.name === "Welcome Dibba" && (
+                    {ev.name === "Welcome Dibba" && (
                       <EventCardWidget event={ev} />
-                      )
+                    )
                     }
                   </Col>
                 ))}
               </Row>
             </div>
           </div>
-
-          <div className="events-bought mt-5">
-            <BasicSectionWidget title={"🎉 Eventos comprados"} />
-            <p className="text-light text-muted fw-lighter ">
-              Você não tem nenhum evento comprado até o momento...
-            </p>
-          </div>
         </div>
+
+        <section className="home-download-section py-5 w-75 mx-auto">
+          <div className="content" style={{ height: 500 }}>
+            <div className="w-50">
+              <h3 className="pt-3 text-light">
+                📱 Aproveite as melhores festas na palma da sua mão
+              </h3>
+
+              <small className="fw-lighter text-light">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nihil dolorum molestiae dignissimos sint sed! Culpa ea architecto recusandae, necessitatibus, doloremque veritatis libero, dicta accusamus suscipit corrupti eum doloribus dignissimos?
+              </small>
+            </div>
+
+            <div className="download-buttons">
+              <Image
+                src={qrCode}
+                height={200}
+              />
+            </div>
+          </div>
+
+          <Image
+            src={mobileMockup}
+            height={500}
+            className="mobileMockup"
+          />
+        </section>
 
         <FooterWidget />
       </div>

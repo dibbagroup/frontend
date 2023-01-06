@@ -10,7 +10,7 @@ export const RecoverPasswordWidget = props => {
 
     return (
         <Form className="recover-password-form">
-            <div className="logo mb-5">
+            <div className="logo mb-4">
                 <img src={logoDibba} alt="Logo Dibba" />
             </div>
 
