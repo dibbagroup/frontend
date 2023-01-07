@@ -104,7 +104,7 @@ export const SignInFormWidget = (props) => {
         <div>
           <hr />
         </div>
-        <Form.Text className="option">ou</Form.Text>
+        <Form.Text className="option" onClick={() => { handleSubmit(); }}>ou</Form.Text>
         <div>
           <hr />
         </div>

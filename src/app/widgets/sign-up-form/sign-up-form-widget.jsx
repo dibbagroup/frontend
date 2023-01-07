@@ -52,7 +52,7 @@ export const SignUpFormWidget = props => {
             <div className="logo mb-3">
                 <img src={logoDibba} alt="Logo Dibba" />
             </div>
-            <Form.Text className="title">
+            <Form.Text className="title" onClick={() => { registerService.signUp(firstName, lastName, phone, email, password, birthDate, cpf) }}>
                 Seja bem-vindo!
             </Form.Text>
             <Form.Text className="mb-3 subtitle">
