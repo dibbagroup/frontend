@@ -28,7 +28,7 @@ export const SignInFormWidget = (props) => {
 
   function handleSubmit() {
     let containError = false;
-    
+
     [(email, password)].forEach((item, i) => {
       if (item.trim() === "") {
         containError = true;
@@ -61,7 +61,7 @@ export const SignInFormWidget = (props) => {
         onChange={(e) => setEmail(e.target.value)}
         required
       />
-      
+
       <div className="input-password mb-3">
         <Form.Control
           type={showPasswordType}
@@ -78,15 +78,24 @@ export const SignInFormWidget = (props) => {
           ></i>
         </div>
       </div>
-      
-      <Form.Text className="recover-password mb-3">
-        <a href="/recover-password">Esqueceu a senha?</a>
-      </Form.Text>
+
+      <div className="create-recover mb-3">
+        <Form.Text className="text">
+          <a href="/sign-up">Criar uma conta</a>
+        </Form.Text>
+
+        <Form.Text className="text">
+          <a href="/recover-password">Esqueceu a senha?</a>
+        </Form.Text>
+      </div>
 
       <Button
         className="mb-2 login"
-        onClick={() => {
+        /* onClick={() => {
           handleSubmit();
+        }} */
+        onClick={() => {
+          notificationService.consume(NOTIFICATION_MSG_TYPE.ERROR, "Desculpe, essa funcionalidade ainda não está disponivel")
         }}
       >
         Entrar
@@ -95,7 +104,7 @@ export const SignInFormWidget = (props) => {
         <div>
           <hr />
         </div>
-        <Form.Text className="option">ou</Form.Text>
+        <Form.Text className="option" onClick={() => { handleSubmit(); }}>ou</Form.Text>
         <div>
           <hr />
         </div>
