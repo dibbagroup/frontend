@@ -93,7 +93,7 @@ export default class EventsPage extends React.Component {
             </InputGroup>
           </div>
 
-          <p className="text-center text-light">Desculpe, ainda não temos nenhum evento cadastrado</p>
+          <p className="text-center text-light">Desculpe, ainda não temos nenhum evento no momento.</p>
 
           {this.state.isLoading ? (
             <div className="text-light text-center">
