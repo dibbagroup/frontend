@@ -64,6 +64,7 @@ export default class HomePage extends React.Component {
             <BasicSectionWidget title={"🔥 Em alta"} />
             <div className="card-list d-grid">
               <Row md={3}>
+                <p className="text-light fw-200">Desculpe, ainda não temos nenhum evento cadastrado</p>
                 {this.state.events.map((ev, i) => (
                   <Col key={i}>
                     {ev.name === "Welcome Dibba" && (
