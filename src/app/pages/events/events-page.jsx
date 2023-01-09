@@ -61,7 +61,7 @@ export default class EventsPage extends React.Component {
       <div className="events-page bg-dark pb-3">
         <HeaderWidget />
 
-        <h1 className="text-light my-4 text-center">Eventos</h1>
+        <h1 className="text-light my-4 text-center">🎫 Eventos</h1>
 
         <div className="content w-75 mx-auto mt-5">
           <div className="w-50 mx-auto mb-5">
